@@ -41,3 +41,6 @@ api.add_route('/qa', QA())
 # to run server cd into `qa_api/` and run this command in terminal: `gunicorn --reload -b 0.0.0.0:8000 qa_api:api`
 # you may then make calls to: `localhost:8000/qa`
 # POST request expects to recieve json = {'question': 'your question'} and returns json = {'answer': 'here is your desired training kit'}
+# To install spacy:
+# pip3 install -U spacy
+# python3 -m spacy download en
