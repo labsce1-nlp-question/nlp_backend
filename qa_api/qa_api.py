@@ -1,6 +1,7 @@
 import falcon
 import json
 import en_core_web_sm
+from collections import Counter
 nlp = en_core_web_sm.load()
 
 # Loads Objectives and Modules
@@ -9,18 +10,33 @@ with open ('Objectives.json', 'r') as obj:
 with open ('Modules.json', 'r') as mod:
   mod = json.load(mod)
 
-# data is made up of Objective:Module pairs
-data = {}
-# lostSouls is made up of unmatchable objectives and modules...
-lostSouls = []
+# Finds word frequencies in given text
+def getFreq (text):
+  counts = Counter()
+  t = nlp(text)
+  for word in t:
+    counts[word.orth_] += 1
+  return counts
 
-# Builds Data
+# Builds Data by matching Objectives and Modules as well as adding information to make search easier
+data = []
 for o in obj:
   for m in mod:
     if o["Modules"] == m["Name"] and o["Modules"] != "" and m["Name"] != "":
-      data[m["Name"]] = {"objective": o, "module": m}
+      t = (o["Student can"] + " " + m["Description"] + " " + m["Objectives"]).lower()
+      data.append({
+        "name": m["Name"],
+        "record": m["RecordID"],
+        "objective": o, 
+        "module": m,
+        "searchProfile": {
+          "text": t,
+          "wordFreq": getFreq(t)
+        }
+      })
 
-# Harvests Souls
+# lostSouls is made up of unmatchable objectives and modules...
+lostSouls = []
 for o in obj:
   if o["Modules"] == "":
     lostSouls.append(o)
@@ -39,9 +55,8 @@ class QA:
     
   def on_post(self, req, resp):
     """Handles POST requests"""
-    doc = nlp(req.media['question'])
-    tokens = [(w.text, w.pos_) for w in doc]
-    answer = data
+    question = nlp(req.media['question'].lower()) 
+    answer = data[0]
     resp.media = answer
 
 api = falcon.API()
@@ -53,5 +68,5 @@ api.add_route('/qa', QA())
 # you may then make calls to: `localhost:8000/qa`
 # POST request expects to recieve json = {'question': 'your question'} and returns json = {'answer': 'here is your desired training kit'}
 # To install spacy:
-# pip3 install -U spacy
-# python3 -m spacy download en
+#   pip3 install -U spacy
+#   python3 -m spacy download en
