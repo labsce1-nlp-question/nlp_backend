@@ -9,6 +9,8 @@ with open ('Objectives.json', 'r') as obj:
   obj = json.load(obj)
 with open ('Modules.json', 'r') as mod:
   mod = json.load(mod)
+with open ('Sprints.json', 'r') as spr:
+  spr = json.load(spr)
 
 # Finds word frequencies in given text
 def getFreq (text):
@@ -22,7 +24,7 @@ def getFreq (text):
 data = []
 for o in obj:
   for m in mod:
-    if o["Modules"] == m["Name"] and o["Modules"] != "" and m["Name"] != "":
+    if o["Modules"].lower().replace(" ", "") == m["Name"].lower().replace(" ", "") and o["Modules"] != "" and m["Name"] != "":
       t = (o["Student can"] + " " + m["Description"] + " " + m["Objectives"]).lower()
       data.append({
         "name": m["Name"],
@@ -34,6 +36,27 @@ for o in obj:
           "wordFreq": getFreq(t)
         }
       })
+
+for d in data:
+  for s in spr:
+    if d["name"].lower().replace(" ","") in s["Modules"].lower().replace(" ",""):
+      d.update({"curriculum": s["Curriculum Sets"]})
+      if "computerscience" in d["curriculum"].lower().replace(" ",""):
+        d.update({"URL": "https://learn.lambdaschool.com/cs/module/" + d["record"]})
+      if "ds" in d["curriculum"].lower().replace(" ",""):
+        d.update({"URL": "https://learn.lambdaschool.com/ds/module/" + d["record"]})
+      if "fullstack" in d["curriculum"].lower().replace(" ",""):
+        d.update({"URL": "https://learn.lambdaschool.com/fsw/module/" + d["record"]})
+      if "android" in d["curriculum"].lower().replace(" ",""):
+        d.update({"URL": "https://learn.lambdaschool.com/android/module/" + d["record"]})
+      if "careerreadiness" in d["curriculum"].lower().replace(" ",""):
+        d.update({"URL": "https://learn.lambdaschool.com/cr/module/" + d["record"]})
+      if "ux" in d["curriculum"].lower().replace(" ",""):
+        d.update({"URL": "https://learn.lambdaschool.com/ux/module/" + d["record"]})
+      if "ios" in d["curriculum"].lower().replace(" ",""):
+        d.update({"URL": "https://learn.lambdaschool.com/ios/module/" + d["record"]})
+      if "principles" in d["curriculum"].lower().replace(" ",""):
+        d.update({"URL": "https://learn.lambdaschool.com/p4s/module/" + d["record"]})
 
 # lostSouls is made up of unmatchable objectives and modules...
 lostSouls = []
@@ -55,8 +78,9 @@ class QA:
     
   def on_post(self, req, resp):
     """Handles POST requests"""
-    question = nlp(req.media['question'].lower()) 
-    answer = data[0]
+    question = nlp(req.media['question'].lower())
+
+    answer = data
     resp.media = answer
 
 api = falcon.API()
