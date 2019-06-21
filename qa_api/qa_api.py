@@ -37,25 +37,26 @@ for o in obj:
         }
       })
 
+# Creates URLs for data objects
 for d in data:
   for s in spr:
     if d["name"].lower().replace(" ","") in s["Modules"].lower().replace(" ",""):
       d.update({"curriculum": s["Curriculum Sets"]})
       if "computerscience" in d["curriculum"].lower().replace(" ",""):
         d.update({"URL": "https://learn.lambdaschool.com/cs/module/" + d["record"]})
-      if "ds" in d["curriculum"].lower().replace(" ",""):
+      elif "ds" in d["curriculum"].lower().replace(" ",""):
         d.update({"URL": "https://learn.lambdaschool.com/ds/module/" + d["record"]})
-      if "fullstack" in d["curriculum"].lower().replace(" ",""):
+      elif "fullstack" in d["curriculum"].lower().replace(" ",""):
         d.update({"URL": "https://learn.lambdaschool.com/fsw/module/" + d["record"]})
-      if "android" in d["curriculum"].lower().replace(" ",""):
+      elif "android" in d["curriculum"].lower().replace(" ",""):
         d.update({"URL": "https://learn.lambdaschool.com/android/module/" + d["record"]})
-      if "careerreadiness" in d["curriculum"].lower().replace(" ",""):
+      elif "careerreadiness" in d["curriculum"].lower().replace(" ",""):
         d.update({"URL": "https://learn.lambdaschool.com/cr/module/" + d["record"]})
-      if "ux" in d["curriculum"].lower().replace(" ",""):
+      elif "ux" in d["curriculum"].lower().replace(" ",""):
         d.update({"URL": "https://learn.lambdaschool.com/ux/module/" + d["record"]})
-      if "ios" in d["curriculum"].lower().replace(" ",""):
+      elif "ios" in d["curriculum"].lower().replace(" ",""):
         d.update({"URL": "https://learn.lambdaschool.com/ios/module/" + d["record"]})
-      if "principles" in d["curriculum"].lower().replace(" ",""):
+      elif "principles" in d["curriculum"].lower().replace(" ",""):
         d.update({"URL": "https://learn.lambdaschool.com/p4s/module/" + d["record"]})
 
 # lostSouls is made up of unmatchable objectives and modules...
@@ -78,9 +79,41 @@ class QA:
     
   def on_post(self, req, resp):
     """Handles POST requests"""
-    question = nlp(req.media['question'].lower())
+    question = nlp(req.media["question"].lower())
+    doc = [(w.text,w.pos_) for w in question]
+    print(doc)
+    qwords = []
+    for w in doc:
+      if w[1] != 'DET' and w[1] != 'VERB' and w[1] != 'PRON' and w[1] != 'PART' and w[1] != 'ADV' and w[1] != 'ADP' and w[1] != 'PUNCT':
+        qwords.append(w[0])
+      if w[1] == 'PUNCT' and len(w[0]) != 1:
+        qwords.append(w[0])
+    
+    print(qwords)
+    matches = []
+    for d in data:
+      newMatch = {
+        "modName": d["name"],
+        "data": d,
+        "nameMatch": [],
+        "textMatch": [],
+        "score": 0
+      }
+      for w in qwords:
+        if w in d["name"].lower(): 
+          newMatch["nameMatch"].append((w,1))
+        if w in d["searchProfile"]["wordFreq"]:
+          newMatch["textMatch"].append((w, d["searchProfile"]["wordFreq"][w]))
 
-    answer = data
+      if newMatch["score"] == 0 and (newMatch["nameMatch"] != [] or newMatch["textMatch"] != []):
+        for nScore in  newMatch["nameMatch"]:
+          newMatch["score"] += nScore[1]
+        for tScore in newMatch["textMatch"]:
+          newMatch["score"] += tScore[1]
+        matches.append(newMatch)
+    
+    matches.sort(key=lambda x: x["score"], reverse=True)
+    answer = {"matches": matches} 
     resp.media = answer
 
 api = falcon.API()
