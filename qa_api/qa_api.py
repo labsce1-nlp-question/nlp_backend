@@ -13,11 +13,15 @@ with open ('Sprints.json', 'r') as spr:
   spr = json.load(spr)
 
 # Finds word frequencies in given text
+# I have given words that are functions like ".map" or ".reduce" a higher weight 2 versus 1 for any other word.
 def getFreq (text):
   counts = Counter()
   t = nlp(text)
   for word in t:
-    counts[word.orth_] += 1
+    if word.pos_ == "PUNCT" and len(word) > 1:
+      counts[word.orth_] += 2
+    else:
+      counts[word.orth_] += 1
   return counts
 
 # Builds Data by matching Objectives and Modules as well as adding information to make search easier
@@ -81,7 +85,8 @@ class QA:
     """Handles POST requests"""
     question = nlp(req.media["question"].lower())
     doc = [(w.text,w.pos_) for w in question]
-    print(doc)
+
+    # qwords = a list of key words asked in the question (doc)
     qwords = []
     for w in doc:
       if w[1] != 'DET' and w[1] != 'VERB' and w[1] != 'PRON' and w[1] != 'PART' and w[1] != 'ADV' and w[1] != 'ADP' and w[1] != 'PUNCT':
@@ -89,7 +94,6 @@ class QA:
       if w[1] == 'PUNCT' and len(w[0]) != 1:
         qwords.append(w[0])
     
-    print(qwords)
     matches = []
     for d in data:
       newMatch = {
@@ -101,18 +105,25 @@ class QA:
       }
       for w in qwords:
         if w in d["name"].lower(): 
-          newMatch["nameMatch"].append((w,1))
+          newMatch["nameMatch"].append((w,2))
         if w in d["searchProfile"]["wordFreq"]:
           newMatch["textMatch"].append((w, d["searchProfile"]["wordFreq"][w]))
 
       if newMatch["score"] == 0 and (newMatch["nameMatch"] != [] or newMatch["textMatch"] != []):
-        for nScore in  newMatch["nameMatch"]:
+        for nScore in newMatch["nameMatch"]:
           newMatch["score"] += nScore[1]
         for tScore in newMatch["textMatch"]:
           newMatch["score"] += tScore[1]
         matches.append(newMatch)
     
+    # this is to cut out matches that do not have a URL and list the ones that do from Highest score to Lowest
+    trimMatches = []
+    for m in matches:
+      if "URL" in m["data"]:
+        trimMatches.append(m)
+    matches = trimMatches
     matches.sort(key=lambda x: x["score"], reverse=True)
+    
     answer = {"matches": matches} 
     resp.media = answer
 
