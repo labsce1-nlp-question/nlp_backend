@@ -130,7 +130,7 @@ class QA:
 api = falcon.API()
 api.add_route('/qa', QA())
 
-# Using Python 3.7
+# Using Python 3.7.3
 # to install needed tools: `pip3 install gunicorn falcon`
 # to run server cd into `qa_api/` and run this command in terminal: `gunicorn --reload -b 0.0.0.0:8000 qa_api:api`
 # you may then make calls to: `localhost:8000/qa`
