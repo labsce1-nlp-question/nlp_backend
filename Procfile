@@ -1,1 +1,1 @@
-web: gunicorn --timeout 300 qa_api:api
+web: python3 -m spacy download en && gunicorn --timeout 300 qa_api:api
