@@ -1,9 +1,8 @@
-#!/usr/bin/env python3
 import falcon
 import json
-import spacy
+import en_core_web_sm
 from collections import Counter
-nlp = spacy.load('en_core_web_sm')
+nlp = en_core_web_sm.load()
 
 # Loads Objectives and Modules
 with open ('Objectives.json', 'r') as obj:
@@ -131,7 +130,7 @@ class QA:
 api = falcon.API()
 api.add_route('/qa', QA())
 
-# Using Python 3.7.3
+# Using Python 3.7
 # to install needed tools: `pip3 install gunicorn falcon`
 # to run server cd into `qa_api/` and run this command in terminal: `gunicorn --reload -b 0.0.0.0:8000 qa_api:api`
 # you may then make calls to: `localhost:8000/qa`
