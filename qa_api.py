@@ -5,11 +5,11 @@ from collections import Counter
 nlp = en_core_web_sm.load()
 
 # Loads Objectives and Modules
-with open ('Objectives.json', 'r') as obj:
+with open ('./resource/Objectives.json', 'r') as obj:
   obj = json.load(obj)
-with open ('Modules.json', 'r') as mod:
+with open ('./resource/Modules.json', 'r') as mod:
   mod = json.load(mod)
-with open ('Sprints.json', 'r') as spr:
+with open ('./resource/Sprints.json', 'r') as spr:
   spr = json.load(spr)
 
 # Finds word frequencies in given text
