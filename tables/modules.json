@@ -582,6 +582,24 @@
     "createdTime": "2019-04-04T18:41:01.000Z"
   },
   {
+    "id": "rec1RD21cWVUPdnfr",
+    "fields": {
+      "Name": "Kaggle Challenge Module 1",
+      "Sprints": ["rece0tbcBVl01xfq6"],
+      "Curriculum Sets": ["rectL796yhZTRAnHA"],
+      "Objective Count": 0,
+      "Level 1 Check": 0,
+      "Objective Level 2 Count": 0,
+      "Projected Level": 0,
+      "Objective Level 3 Count": 0,
+      "Objective Level 4 Count": 0,
+      "Created time": "2019-07-31T23:20:08.000Z",
+      "Objectives count": 0,
+      "RecordID": "rec1RD21cWVUPdnfr"
+    },
+    "createdTime": "2019-07-31T23:20:08.000Z"
+  },
+  {
     "id": "rec1S1HMqewKkwziz",
     "fields": {
       "Name": "Blockchain I - Structure",
@@ -653,7 +671,8 @@
         "recJHELxBq8BJzn65",
         "recYEob49en8RtMku",
         "reckQERyv30wOxmo9",
-        "recCPuKxE9XzWLdtl"
+        "recCPuKxE9XzWLdtl",
+        "recujS5exyn3XYikj"
       ],
       "Description": "Preprocessing opens up tools earlier web developers could never dream of. Mixins, functions, and namespaces were never available to CSS until preprocessors came along.  Understanding how to use these new tools can separate an average user interface developer from a great one.  Knowing these skills will make layouts so easy that the programmer can spend their valuable time on deeper logic in other more advanced languages.",
       "Curriculum Sets": ["recvV85PJcBALdsBg", "recFIsDg0qlCqJjyS"],
@@ -1880,7 +1899,8 @@
         "recpmAbXgDNuv69aw",
         "recSNRfb2jaFFx7z5",
         "rec5IwFT4bKumfgbY",
-        "recM2ylaUCY6YVdqQ"
+        "recM2ylaUCY6YVdqQ",
+        "rec4KRdzK4HqAWT52"
       ],
       "Description": "While it\u2019s important that we always understand our users and the context we\u2019re designing for, at the end of the day we\u2019re all still human beings. By studying psychology and neuroscience, we can learn how our minds work in order to leverage that understanding to design better solutions for everyone. With this foundation, we can explore universal design principles and utilize them within our design contexts.",
       "Curriculum Sets": ["recwiOMghayLaKKIj"],
@@ -2780,7 +2800,7 @@
         "reclBRk0jcVopLwEB",
         "recwvBKOhsYq6L1jT"
       ],
-      "Description": "As we build larger and more feature rich web pages, we may notice a trend in our code; elements that are essentially using the same functionality and styling with minor differences in the data they present. In an effort to keep our code readable, reusable, and most of all DRY, we can build on these repeating patterns and create components. Components are reusable pieces of code that can be used to build elements sharing functionality and styling. Components are the heart of any dynamic web application and Javascript framework.",
+      "Description": "As we build larger and more feature rich web pages, we may notice a trend in our code; elements that are essentially using the same functionality and styling with minor differences in the data they present. In an effort to keep our code readable, reusable, and most of all DRY, we can build on these repeating patterns and create components. Components are reusable pieces of code that can be used to build elements sharing functionality and styling. Components are the heart of any dynamic web application and JavaScript framework.",
       "Curriculum Sets": ["recvV85PJcBALdsBg", "recEpbffuddAjD376"],
       "Objective Count": 3,
       "Level 1 Check": 1,
@@ -3113,7 +3133,7 @@
   {
     "id": "rec92lrddmbWfqcRv",
     "fields": {
-      "Name": "UX Case Studies I",
+      "Name": "UX Portfolio Content",
       "Sprints": ["recFiA17MlpeOjwZi"],
       "Curriculum Sets": ["rec0OA5VGsxv1SKvj"],
       "Objective Count": 0,
@@ -3593,25 +3613,22 @@
       "Name": "CSS Fundamentals",
       "Project": ["recRXjBqppG4CbeqB"],
       "Objectives": [
-        "recQJpd1l1By9KVDA",
-        "recTA1o8wyb5pvrB0",
-        "recV3aLxzdlIDnpXh",
-        "recaGWQLRUnig4QLX",
-        "recI10P4OzbRzGhiw",
-        "recEhhi6bYE4mtp4a"
+        "recOs3WOBGmoI2PhQ",
+        "rechkenbHVFB67X6d",
+        "rec7Jch1V039R5ddW"
       ],
       "Sprints": ["recqidLwS7wDOQTv8"],
       "Instruction Videos": ["reckPzGXOI9V9ZTI7"],
       "Description": "CSS allows us to take the structure of our HTML and present it as a compelling user interface. This is where design meets code.",
       "Curriculum Sets": ["rec0OA5VGsxv1SKvj"],
-      "Objective Count": 6,
+      "Objective Count": 3,
       "Level 1 Check": 1,
-      "Objective Level 2 Count": 5,
+      "Objective Level 2 Count": 0,
       "Projected Level": 1,
-      "Objective Level 3 Count": 5,
-      "Objective Level 4 Count": 5,
+      "Objective Level 3 Count": 0,
+      "Objective Level 4 Count": 0,
       "Created time": "2019-05-20T17:12:01.000Z",
-      "Objectives count": 6,
+      "Objectives count": 3,
       "RecordID": "recAzP1dlrdfEiY3z"
     },
     "createdTime": "2019-05-20T17:12:01.000Z"
@@ -5374,6 +5391,24 @@
     "createdTime": "2018-07-17T17:51:49.000Z"
   },
   {
+    "id": "recH0NmaPa83iXGWQ",
+    "fields": {
+      "Name": "Kaggle Challenge Module 4",
+      "Sprints": ["rece0tbcBVl01xfq6"],
+      "Curriculum Sets": ["rectL796yhZTRAnHA"],
+      "Objective Count": 0,
+      "Level 1 Check": 0,
+      "Objective Level 2 Count": 0,
+      "Projected Level": 0,
+      "Objective Level 3 Count": 0,
+      "Objective Level 4 Count": 0,
+      "Created time": "2019-07-31T23:19:44.000Z",
+      "Objectives count": 0,
+      "RecordID": "recH0NmaPa83iXGWQ"
+    },
+    "createdTime": "2019-07-31T23:19:44.000Z"
+  },
+  {
     "id": "recH0OAnSr6ZcnZ7F",
     "fields": {
       "Name": "Theory of Computation",
@@ -6040,6 +6075,24 @@
     "createdTime": "2017-12-11T18:28:18.000Z"
   },
   {
+    "id": "recJgCSqdWPoynqv6",
+    "fields": {
+      "Name": "Regression & Classification Module 1",
+      "Sprints": ["recwXzAICs5dfcBw1"],
+      "Curriculum Sets": ["rectL796yhZTRAnHA"],
+      "Objective Count": 0,
+      "Level 1 Check": 0,
+      "Objective Level 2 Count": 0,
+      "Projected Level": 0,
+      "Objective Level 3 Count": 0,
+      "Objective Level 4 Count": 0,
+      "Created time": "2019-07-31T23:18:50.000Z",
+      "Objectives count": 0,
+      "RecordID": "recJgCSqdWPoynqv6"
+    },
+    "createdTime": "2019-07-31T23:18:50.000Z"
+  },
+  {
     "id": "recJlTx1zW7tCWXz7",
     "fields": {
       "Name": "Data Preparation: An Overview",
@@ -6360,7 +6413,11 @@
       ],
       "Sprints": ["recYL2HDPPpkDmGEm"],
       "Status": "Active",
-      "Instruction Videos": ["recC6zhuuUQcpLjwD", "recMxNIv3m9NyNBOZ"],
+      "Instruction Videos": [
+        "recC6zhuuUQcpLjwD",
+        "recMxNIv3m9NyNBOZ",
+        "recN3r7hvPSEeM3HW"
+      ],
       "Description": "Side effects in web apps are very common. It's important to understand what side effects are so we can handle them properly in our components.",
       "Curriculum Sets": ["recvV85PJcBALdsBg", "recEpbffuddAjD376"],
       "Objective Count": 4,
@@ -6942,7 +6999,7 @@
   {
     "id": "recMvFC7ZYtsxnCYU",
     "fields": {
-      "Name": "Hyperparameter Optimization",
+      "Name": "Applied Modeling Module 3",
       "Objectives": ["recTyKzDk10t0LDgR", "recoqOJuPRzwCZML6"],
       "Sprints": ["recxMsHuJqLZAGSZF", "recgPpsKlD7tjQxoB"],
       "Instruction Videos": [
@@ -7155,6 +7212,24 @@
       "RecordID": "recNoG3xU3TXhmbYi"
     },
     "createdTime": "2019-02-07T16:50:13.000Z"
+  },
+  {
+    "id": "recNrVqWhAs5YMK0p",
+    "fields": {
+      "Name": "Kaggle Challenge Module 2",
+      "Sprints": ["rece0tbcBVl01xfq6"],
+      "Curriculum Sets": ["rectL796yhZTRAnHA"],
+      "Objective Count": 0,
+      "Level 1 Check": 0,
+      "Objective Level 2 Count": 0,
+      "Projected Level": 0,
+      "Objective Level 3 Count": 0,
+      "Objective Level 4 Count": 0,
+      "Created time": "2019-07-31T23:20:02.000Z",
+      "Objectives count": 0,
+      "RecordID": "recNrVqWhAs5YMK0p"
+    },
+    "createdTime": "2019-07-31T23:20:02.000Z"
   },
   {
     "id": "recNs5HRFoIRxVqNl",
@@ -7479,7 +7554,8 @@
         "recumo3mIgGznQsSe",
         "recQ1GMtKdhBAZ8E0",
         "recgJEodAUL9wZlYl",
-        "recCUcvCwEjnxZXse"
+        "recCUcvCwEjnxZXse",
+        "rechFe5LoHrIpJReE"
       ],
       "Description": "As designers, we need to be able to draw in order to design anything! But, this doesn\u2019t mean that we have to become artistic savants overnight. Instead, with a basic understanding of simple principles, we can draw anything we need for UI design.",
       "Curriculum Sets": ["rec0OA5VGsxv1SKvj"],
@@ -7928,7 +8004,7 @@
   {
     "id": "recQGaK0cy4n5sZ5i",
     "fields": {
-      "Name": "Log-Linear Regression",
+      "Name": "Applied Modeling Module 1",
       "Objectives": [
         "recA5BsEPLEliClRX",
         "recqWpyrukPV0Jlat",
@@ -8802,24 +8878,23 @@
       "Name": "HTML Fundamentals",
       "Project": ["recIyEpabKhmpWOyM"],
       "Objectives": [
-        "recMYlwQ6HxItB2eQ",
-        "recNut1aioeZXwL8H",
+        "rec6GRuFXIr8t5NhI",
+        "recXAtlt8hQo3vGuo",
         "recDzcyPe6wQxEAQ9",
-        "reccPUFJAagGm0kqt",
         "rec5ZR8nyz6F1jwTD"
       ],
       "Sprints": ["recqidLwS7wDOQTv8"],
       "Instruction Videos": ["rec1E5PR3XyfY9nhx"],
       "Description": "Even the most complex web applications start with simple HTML elements. Knowing how to use HTML will let you build the foundation for web experiences.",
       "Curriculum Sets": ["rec0OA5VGsxv1SKvj"],
-      "Objective Count": 5,
+      "Objective Count": 4,
       "Level 1 Check": 1,
-      "Objective Level 2 Count": 5,
-      "Projected Level": 2,
-      "Objective Level 3 Count": 1,
-      "Objective Level 4 Count": 1,
+      "Objective Level 2 Count": 2,
+      "Projected Level": 1,
+      "Objective Level 3 Count": 0,
+      "Objective Level 4 Count": 0,
       "Created time": "2019-05-20T17:09:56.000Z",
-      "Objectives count": 5,
+      "Objectives count": 4,
       "RecordID": "recTAHYbi3RL93PQ4"
     },
     "createdTime": "2019-05-20T17:09:56.000Z"
@@ -9259,6 +9334,24 @@
     "createdTime": "2019-02-04T01:05:45.000Z"
   },
   {
+    "id": "recVGCrPKv4cL9tEF",
+    "fields": {
+      "Name": "Regression & Classification Module 3",
+      "Sprints": ["recwXzAICs5dfcBw1"],
+      "Curriculum Sets": ["rectL796yhZTRAnHA"],
+      "Objective Count": 0,
+      "Level 1 Check": 0,
+      "Objective Level 2 Count": 0,
+      "Projected Level": 0,
+      "Objective Level 3 Count": 0,
+      "Objective Level 4 Count": 0,
+      "Created time": "2019-07-31T23:18:38.000Z",
+      "Objectives count": 0,
+      "RecordID": "recVGCrPKv4cL9tEF"
+    },
+    "createdTime": "2019-07-31T23:18:38.000Z"
+  },
+  {
     "id": "recVGtNMTuqWfeo6d",
     "fields": {
       "Name": "Test Cases and Test Data",
@@ -9519,16 +9612,19 @@
     "id": "recWVbATImrK4jrtF",
     "fields": {
       "Name": "CSS Layouts",
+      "Project": ["recCh3AXCiquyKJdx"],
+      "Objectives": ["rec6lbQvdBGLAkRRZ", "recPrkr0DyVHprTrG"],
       "Sprints": ["recqidLwS7wDOQTv8"],
+      "Description": "We can use CSS to style individual HTML elements. But, we need to learn how to work with CSS to make a layout in order to code a full user interface.",
       "Curriculum Sets": ["rec0OA5VGsxv1SKvj"],
-      "Objective Count": 0,
-      "Level 1 Check": 0,
+      "Objective Count": 2,
+      "Level 1 Check": 1,
       "Objective Level 2 Count": 0,
-      "Projected Level": 0,
+      "Projected Level": 1,
       "Objective Level 3 Count": 0,
       "Objective Level 4 Count": 0,
       "Created time": "2019-07-05T14:22:37.000Z",
-      "Objectives count": 0,
+      "Objectives count": 2,
       "RecordID": "recWVbATImrK4jrtF"
     },
     "createdTime": "2019-07-05T14:22:37.000Z"
@@ -9627,6 +9723,24 @@
       "RecordID": "recXe04ul7AiEtNTC"
     },
     "createdTime": "2018-05-29T18:19:47.000Z"
+  },
+  {
+    "id": "recXqQFbsskJBNPlX",
+    "fields": {
+      "Name": "Regression & Classification Module 2",
+      "Sprints": ["recwXzAICs5dfcBw1"],
+      "Curriculum Sets": ["rectL796yhZTRAnHA"],
+      "Objective Count": 0,
+      "Level 1 Check": 0,
+      "Objective Level 2 Count": 0,
+      "Projected Level": 0,
+      "Objective Level 3 Count": 0,
+      "Objective Level 4 Count": 0,
+      "Created time": "2019-07-31T23:18:45.000Z",
+      "Objectives count": 0,
+      "RecordID": "recXqQFbsskJBNPlX"
+    },
+    "createdTime": "2019-07-31T23:18:45.000Z"
   },
   {
     "id": "recXskxQzOkT3gL3v",
@@ -11144,6 +11258,24 @@
     "createdTime": "2019-07-05T14:27:02.000Z"
   },
   {
+    "id": "reccfUja14MvXcHOk",
+    "fields": {
+      "Name": "Kaggle Challenge Module 3",
+      "Sprints": ["rece0tbcBVl01xfq6"],
+      "Curriculum Sets": ["rectL796yhZTRAnHA"],
+      "Objective Count": 0,
+      "Level 1 Check": 0,
+      "Objective Level 2 Count": 0,
+      "Projected Level": 0,
+      "Objective Level 3 Count": 0,
+      "Objective Level 4 Count": 0,
+      "Created time": "2019-07-31T23:19:58.000Z",
+      "Objectives count": 0,
+      "RecordID": "reccfUja14MvXcHOk"
+    },
+    "createdTime": "2019-07-31T23:19:58.000Z"
+  },
+  {
     "id": "reccho1GUMGdFjsRe",
     "fields": {
       "Name": "Imposter Syndrome and Diversity and Inclusion",
@@ -11301,7 +11433,7 @@
         "recEr0s6lNUhtp5yH",
         "rec1SkJAPFktl5zpY"
       ],
-      "Description": "Now that we have some understanding of what a component is, we can learn to utilize asynchronous Javascript and Promises to make HTTP requests and get data from a server.",
+      "Description": "Now that we have some understanding of what a component is, we can learn to utilize asynchronous JavaScript and Promises to make HTTP requests and get data from a server.",
       "Curriculum Sets": ["recvV85PJcBALdsBg", "recEpbffuddAjD376"],
       "Objective Count": 3,
       "Level 1 Check": 1,
@@ -11428,7 +11560,8 @@
         "recqjpkzJSaj2XodH",
         "recBkNg06XGgUEHQK",
         "recNhNVSQmyvSrYSI",
-        "recbTCXwANmqWscmH"
+        "recbTCXwANmqWscmH",
+        "reccmpoljO35YgAfy"
       ],
       "Curriculum Sets": ["rec2T0wUSqQ7DOxLE"],
       "Objective Count": 2,
@@ -11763,7 +11896,8 @@
         "rec7CQAlfcLl9Q7Fj",
         "recBudrhblNrNIifW",
         "reciYnfXaLXwP1IF7",
-        "recKQR5uKN7fqNzml"
+        "recKQR5uKN7fqNzml",
+        "reci1WUjFYAq8bylQ"
       ],
       "Curriculum Sets": ["rectL796yhZTRAnHA"],
       "Objective Count": 4,
@@ -13865,16 +13999,23 @@
     "id": "reclfCBukV5561dm0",
     "fields": {
       "Name": "Semantic HTML",
+      "Project": ["recuxCBY7pkxZNjvH"],
+      "Objectives": [
+        "rec65QJ9aHOxmfrC2",
+        "recdlUU0zqwNDKzkg",
+        "recGlKyyy3Ci7vfCb"
+      ],
       "Sprints": ["recqidLwS7wDOQTv8"],
+      "Description": "HTML tags have meaning. To use HTML effectively, we need to understand tags' meanings and how, when, and why we use them. This endeavor is called Semantic HTML.",
       "Curriculum Sets": ["rec0OA5VGsxv1SKvj"],
-      "Objective Count": 0,
-      "Level 1 Check": 0,
+      "Objective Count": 3,
+      "Level 1 Check": 1,
       "Objective Level 2 Count": 0,
-      "Projected Level": 0,
+      "Projected Level": 1,
       "Objective Level 3 Count": 0,
       "Objective Level 4 Count": 0,
       "Created time": "2019-07-05T14:22:28.000Z",
-      "Objectives count": 0,
+      "Objectives count": 3,
       "RecordID": "reclfCBukV5561dm0"
     },
     "createdTime": "2019-07-05T14:22:28.000Z"
@@ -13977,7 +14118,11 @@
         "rece2nzciWC5e7vVY"
       ],
       "Sprints": ["recrEDgbxjv9tQIP0"],
-      "Instruction Videos": ["recoGRtLvyotvqfwP", "rec8Dlj6XEys5mgPB"],
+      "Instruction Videos": [
+        "recoGRtLvyotvqfwP",
+        "rec8Dlj6XEys5mgPB",
+        "reccbLH32nEL0W2Hl"
+      ],
       "Description": "Principal Components Analysis is an important statistical technique for decreasing the dimensionality of a dataset.",
       "2 Days": true,
       "Curriculum Sets": ["recPhHwk05xgnduyh"],
@@ -15269,7 +15414,8 @@
         "reclkWUwjTrNRbCVi",
         "rec3IHVwhgm4aB9fI",
         "recP6Pv98AmaGcjjf",
-        "recDmQCxTEoF23GlX"
+        "recDmQCxTEoF23GlX",
+        "recfFytukyleP4CmM"
       ],
       "Curriculum Sets": ["recPhHwk05xgnduyh", "recQ63rCHddlzh0Vf"],
       "Objective Count": 3,
@@ -15330,7 +15476,7 @@
   {
     "id": "recqSTMv6z6WcfpRf",
     "fields": {
-      "Name": "UX Case Studies II",
+      "Name": "UX Case Studies",
       "Sprints": ["recFiA17MlpeOjwZi"],
       "Curriculum Sets": ["rec0OA5VGsxv1SKvj"],
       "Objective Count": 0,
@@ -15785,7 +15931,7 @@
   {
     "id": "recsiAKpXWors0Q98",
     "fields": {
-      "Name": "Model Interpretation",
+      "Name": "Applied Modeling Module 4",
       "Objectives": [
         "recuavtQOoCMFERi9",
         "recE8YeckqpFGli6h",
@@ -16918,7 +17064,7 @@
   {
     "id": "recvDZb2pBkbnV1FM",
     "fields": {
-      "Name": "Gradient Boosting",
+      "Name": "Applied Modeling Module 2",
       "Objectives": ["reczioNraaCCiv8LF", "recA5BsEPLEliClRX"],
       "Sprints": ["recxMsHuJqLZAGSZF", "recgPpsKlD7tjQxoB"],
       "Instruction Videos": [
@@ -17664,6 +17810,24 @@
     "createdTime": "2019-07-19T23:47:54.000Z"
   },
   {
+    "id": "recx5tdEUQYJZ5kHZ",
+    "fields": {
+      "Name": "Regression & Classification Module 4",
+      "Sprints": ["recwXzAICs5dfcBw1"],
+      "Curriculum Sets": ["rectL796yhZTRAnHA"],
+      "Objective Count": 0,
+      "Level 1 Check": 0,
+      "Objective Level 2 Count": 0,
+      "Projected Level": 0,
+      "Objective Level 3 Count": 0,
+      "Objective Level 4 Count": 0,
+      "Created time": "2019-07-31T23:18:29.000Z",
+      "Objectives count": 0,
+      "RecordID": "recx5tdEUQYJZ5kHZ"
+    },
+    "createdTime": "2019-07-31T23:18:29.000Z"
+  },
+  {
     "id": "recxIcH4tIjrvTyZX",
     "fields": {
       "Name": "Modularity and Lifecycle",
@@ -17844,7 +18008,8 @@
         "recTpqEboQMB82wKr",
         "rec0raL1M0uVEecDQ",
         "recFYO3YWVqEGJKFL",
-        "recw2i7kNfIQPho88"
+        "recw2i7kNfIQPho88",
+        "recuwhPkcUEv9ozrG"
       ],
       "Description": "In this module we'll do a review of some basic statistics concepts:\n- Variance\n- Standard Deviation\n- Covariance\n- Correlation\n\nThese topics will build up to a discussion about variance-covariance matrices, why they're important and what some of their main uses are in data science. We'll also explore some intermediate Linear Algebra topics focused on building a strong intuition in regards to working with high dimensional data. We'll establish the concepts of: \n- Orthogonality\n- Unit Vectors\n- Linear Independence and Span\n- Basis Vectors & Orthogonal Basis\n- Rank and Nullity\n- Linear Projections in R^2",
       "Curriculum Sets": ["rec2T0wUSqQ7DOxLE"],

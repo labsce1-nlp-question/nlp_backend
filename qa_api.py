@@ -7,19 +7,17 @@ from collections import Counter
 from dotenv import load_dotenv
 import os
 
+# finalT0 = time.time()
 load_dotenv()
 AIRTABLE_KEY = os.getenv('AIRTABLE_KEY')
 nlp = spacy.load("en_core_web_sm")
-data = []
 
-# Generates Data Daily from Airtable:
-def dataIntake():
+"""Generates ./tables json data from Airtable:"""
+def getAirData():
+  print("Start of getAirData--->\n")
   t0 = time.time()
-  global data
-
-  # Set genJsons = True to generate jsons from Airtable tables
-  genJsons = False
-  while(genJsons):
+  getAir = True
+  if getAir:
     # Obtain all Modules:
     response = requests.get(
       "https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Modules",
@@ -38,11 +36,10 @@ def dataIntake():
         )
         if response:
           m = response.json()
-          for mod in m["records"]:
-            modules.append(mod)
+          for module in m["records"]:
+            modules.append(module)
         else:
           print("Error getting offset")
-      # print(json.dumps(modules, indent=4), len(modules))
     else:
       print("Error getting modules")
     
@@ -72,7 +69,6 @@ def dataIntake():
             objectives.append(obj)
         else:
           print("Error getting offset")
-      # print(json.dumps(objectives, indent=4), len(objectives))
     else:
       print("Error getting objectives")
     
@@ -87,7 +83,7 @@ def dataIntake():
 
     if response:
       c = response.json()
-      curriculum = c["records"]
+      curriculumSets = c["records"]
 
       while "offset" in c:
         offset = c["offset"]
@@ -97,244 +93,213 @@ def dataIntake():
         )
         if response:
           c = response.json()
-          for curr in c["records"]:
-            curriculum.append(curr)
+          for curriculumSet in c["records"]:
+            curriculumSets.append(curr)
         else:
           print("Error getting offset", response.text)
-      # print(json.dumps(curriculum, indent=4), len(curriculum))
     else:
-      print("Error getting Curriculum", response.text)
+      print("Error getting Curriculum Sets", response.text)
     
     # Make curriculumSets.json
     with open("./tables/curriculumSets.json", "w") as f:
-      json.dump(curriculum, f)
+      json.dump(curriculumSets, f)
 
-    # Obtain all Courses:
-    response = requests.get("https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/courses",
-      headers = {"Authorization" : f"Bearer {AIRTABLE_KEY}"},
-    )
+    getRecord = {}
+    for module in modules:
+      getRecord[module["id"]] = module
+    for objective in objectives:
+      getRecord[objective["id"]] = objective
+    for curriculumSet in curriculumSets:
+      getRecord[curriculumSet["id"]] = curriculumSet
 
-    if response:
-      c = response.json()
-      courses = c["records"]
+    with open("./tables/getRecord.json", "w") as f:
+      json.dump(getRecord, f)
+  else:
+    return
 
-      while "offset" in c:
-        offset = c["offset"]
-        response = requests.get(
-          f"https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/courses?offset={offset}",
-          headers = {"Authorization" : f"Bearer {AIRTABLE_KEY}"},
-        )
-        if response:
-          c = response.json()
-          for course in c["records"]:
-            courses.append(course)
-        else:
-          print("Error getting offset", response.text)
-      # print(json.dumps(courses, indent=4), "HERE: ", len(courses))
-    else:
-      print("Error getting Courses", response.text)
-    
-    # Make courses.json
-    with open("./tables/courses.json", "w") as f:
-      json.dump(courses, f)
+  speed = time.time() - t0
+  print(f"\nSpeed: {speed}")
+  print("\n<---End of getAirData")
 
-    # Generates a hasth table for easy record look up
-    hobj = {}
-    hmod = {}
-    hcurr = {}
-    hcourse = {}
-    for obj in objectives:
-      hobj[obj["id"]] = obj
-    for mod in modules:
-      hmod[mod["id"]] = mod
-    for curr in curriculum:
-      hcurr[curr["id"]] = curr
-    for course in courses:
-      hcourse[course["id"]] = course
-    
-    htable = dict(hobj, **hmod, **hcurr, **hcourse)
+def genModSearchData():
+  print("Start of genModSearchData--->\n")
+  t0 = time.time()
+  modSearchData = []
 
-    # Makes htable.json
-    with open("./tables/htable.json", "w") as f:
-      json.dump(htable, f)
-    genJsons = False
-  
-  # Loads jsons
+  # Loads jsons from ./tables
   with open ('./tables/modules.json', 'r') as modules:
     modules = json.load(modules)
   with open ('./tables/objectives.json', 'r') as objectives:
     objectives = json.load(objectives)
-  with open ('./tables/curriculumSets.json', 'r') as curriculum:
-    curriculum = json.load(curriculum)
-  with open ('./tables/courses.json', 'r') as courses:
-    courses = json.load(courses)
-  with open ('./tables/htable.json', 'r') as htable:
-    htable = json.load(htable)
+  with open ('./tables/curriculumSets.json', 'r') as curriculumSets:
+    curriculumSets = json.load(curriculumSets)
+  with open ('./tables/getRecord.json', 'r') as getRecord:
+    getRecord = json.load(getRecord)
 
-  # Set genData = True to generate data
-  genData = False
-  while(genData):
-    # Finds word frequencies in given text
-    # I have given words that are functions like ".map" or ".reduce" a higher weight 2 versus 1 for any other word.
-    def getFreq (text):
-      counts = Counter()
-      t = nlp(text)
-      for word in t:
-        if word.pos_ == "PUNCT" and len(word) > 1:
-          counts[word.orth_] += 2
-        else:
-          counts[word.orth_] += 1
-      return counts
+  # Creates newEntry for modSearchData:
+  for module in modules:
+    newEntry = {}
+    modSearchProfile = {}
+    newEntry["id"] = module["id"]
+    moduleFields = module["fields"]
 
-    for mod in modules:
-      newEntry = {}
-      newEntry["module"] = mod
+    # text is a compilation of relavent search text found in modules fields and objectives fields 
+    text = ""
 
-      newObj = []
-      if "Objectives" in mod["fields"]:
-        for obj in mod["fields"]["Objectives"]:
-          newObj.append(htable[obj])
-        newEntry["module"]["fields"]["Objectives"] = newObj
+    if "Name" in moduleFields:
+      newEntry["name"] = moduleFields["Name"]
+    else:
+      newEntry["name"] = "GHOST"
+    
+    if "Description" in moduleFields:
+      newEntry["description"] = moduleFields["Description"]
+      text = text + moduleFields["Description"]
+    else:
+      newEntry["description"] = "NO_DESCRIPTION"
 
-      if "Name" in mod["fields"]:
-        newEntry["modName"] = mod["fields"]["Name"]
-      else:
-        newEntry["modName"] = "GHOST"
-      newEntry["modRecord"] = mod["id"]
+    # Generates newEntry["URL"]
+    # Uses Curriculum Sets Short ID field to complete module URL's:
+    newCurriculumSets = []
+    noCurriculum = []
+    noShortID = []
+    if "Curriculum Sets" in moduleFields:
+      for curriculumSet in moduleFields["Curriculum Sets"]:
+        newCurriculumSets.append(getRecord[curriculumSet])
 
-
-      if "Description" in mod["fields"]:
-        newEntry["description"] = mod["fields"]["Description"]
-      else:
-        newEntry["description"] = "No Description"
-
-      newCurrSets = []
-      noCurrListed = []
-      noShortID = []
-      if "Curriculum Sets" in  mod["fields"]:
-        for currset in mod["fields"]["Curriculum Sets"]:
-          newCurrSets.append(htable[currset])
-        mod["fields"]["Curriculum Sets"] = newCurrSets
-
-        for currset in mod["fields"]["Curriculum Sets"]:
-          if "Short ID" in currset["fields"]:
-            shortID = currset["fields"]["Short ID"].lower()
-            newURL = f"https://learn.lambdaschool.com/{shortID}" + "/module/" + mod["fields"]["RecordID"]
-            response = requests.get(newURL)
-            if response:
-              newEntry["URL"] = newURL
-            else:
-              print(response)
+      for curriculumSet in newCurriculumSets:
+        if "Short ID" in curriculumSet["fields"]:
+          shortID = curriculumSet["fields"]["Short ID"].lower()
+          newURL = f"https://learn.lambdaschool.com/{shortID}" + "/module/" + moduleFields["RecordID"]
+          response = requests.get(newURL)
+          if response:
+            newEntry["URL"] = newURL
           else:
-            noShortID.append(mod)
-      else:
-        noCurrListed.append(mod)
+            break
+        else:
+          noShortID.append(module)
+    else:
+      noCurriculum.append(module)
+
+    if "URL" in newEntry:
+      # Creates newEntry["modSearchProfile"]
+      def getFreq (text):
+        counts = Counter()
+        t = nlp(text)
+        for word in t:
+          if word.pos_ == "PUNCT" and len(word) > 1:
+            counts[word.orth_] += 2
+          else:
+            counts[word.orth_] += 1
+        return counts
+
+      # Gathers objectives linked to module:
+      linkedObjectives = []
+      if "Objectives" in moduleFields:
+        for objective in moduleFields["Objectives"]:
+          linkedObjectives.append(getRecord[objective])    
+
+      # Generates text from objectives
+      if "Instructors Notes" in moduleFields:
+        text = text + moduleFields["Instructors Notes"]
+
+      for objective in linkedObjectives:
+        objectiveFields = objective["fields"]
+
+        if "Student can" in objectiveFields:
+          text = text + " " + objectiveFields["Student can"]
+        if "Description/Rationale" in objectiveFields:
+          text = text + " " + objectiveFields["Description/Rationale"]
+        if "Introduction" in objectiveFields:
+          text = text + " " + objectiveFields["Introduction"]
+        if "Tutorial" in objectiveFields:
+          text = text + " " + objectiveFields["Tutorial"]
+        if "Instructor Notes" in objectiveFields:
+          text = text + " " + objectiveFields["Instructor Notes"]
+        if "Challenge" in objectiveFields:
+          text = text + " " + objectiveFields["Challenge"]
       
-      data.append(newEntry)
-    
-    newData = []
-    lostData = []
-    for entry in data:
-      if "URL" in entry:
-        newData.append(entry)
-      else:
-        lostData.append(entry)
-
-    data = newData
-    
-    with open('./data.json', 'w') as f:
-      json.dump(data, f)
-    genData = False
-
-  # Loads data
-  with open('./data.json', 'r') as data:
-    data = json.load(data)
-
+      text = text.lower()
+      modSearchProfile["text"] = text
+      modSearchProfile["textFreq"]= getFreq(text)
+      newEntry["modSearchProfile"] = modSearchProfile
+      modSearchData.append(newEntry)
+  
+  with open("./modSearchData.json", "w") as f:
+    json.dump(modSearchData, f)
+  
   speed = time.time() - t0
-  print(f"---data length: {len(data)} \n---speed: {speed}")
-dataIntake()
-print("End of Intake")
+  print(f"modSearchData length: {len(modSearchData)} \nSpeed: {speed}")
+  print("\n<---End of genModSearchData")
 
-# # Builds Data by matching Objectives and Modules as well as adding information to make search easier
-# data = []
-# for o in obj:
-#   for m in mod:
-#     if o["Modules"].lower().replace(" ", "") == m["Name"].lower().replace(" ", "") and o["Modules"] != "" and m["Name"] != "":
-#       t = (o["Student can"] + " " + m["Description"] + " " + m["Objectives"]).lower()
-#       data.append({
-#         "name": m["Name"],
-#         "record": m["RecordID"],
-#         "objective": o, 
-#         "module": m,
-#         "searchProfile": {
-#           "text": t,
-#           "wordFreq": getFreq(t)
-#         }
-#       })
+# getAirData()
+# genModSearchData()
 
 class QA:
   def on_get(self, req, resp):
     """Handles GET requests"""
-    welcome = {
-      "welcome": "I have the answers..."
-    }
-
-    resp.media = data
-    
+    with open("./modSearchData.json", "r") as modSearchData:
+      modSearchData = json.load(modSearchData)
+    if modSearchData:
+      resp.media = modSearchData
+    else:
+      resp.media = {"Error": "No modSearchData"}
+      
   def on_post(self, req, resp):
     """Handles POST requests"""
-    # question = nlp(req.media["question"].lower())
-    # doc = [(w.text,w.pos_) for w in question]
+    with open("./modSearchData.json", "r") as modSearchData:
+      modSearchData = json.load(modSearchData)
 
-    # # qwords = a list of key words asked in the question (doc)
-    # qwords = []
-    # for w in doc:
-    #   if w[1] != 'DET' and w[1] != 'VERB' and w[1] != 'PRON' and w[1] != 'PART' and w[1] != 'ADV' and w[1] != 'ADP' and w[1] != 'PUNCT':
-    #     qwords.append(w[0])
-    #   if w[1] == 'PUNCT' and len(w[0]) != 1:
-    #     qwords.append(w[0])
-    
-    # matches = []
-    # for d in data:
-    #   newMatch = {
-    #     "modName": d["name"],
-    #     "data": d,
-    #     "nameMatch": [],
-    #     "textMatch": [],
-    #     "score": 0
-    #   }
-    #   for w in qwords:
-    #     if w in d["name"].lower(): 
-    #       newMatch["nameMatch"].append((w,2))
-    #     if w in d["searchProfile"]["wordFreq"]:
-    #       newMatch["textMatch"].append((w, d["searchProfile"]["wordFreq"][w]))
+    question = nlp(req.media["question"].lower())
+    doc = [(w.text,w.pos_) for w in question]
+    # print(f"Question: {question}\nNLP Doc: {doc}")
 
-    #   if newMatch["score"] == 0 and (newMatch["nameMatch"] != [] or newMatch["textMatch"] != []):
-    #     for nScore in newMatch["nameMatch"]:
-    #       newMatch["score"] += nScore[1]
-    #     for tScore in newMatch["textMatch"]:
-    #       newMatch["score"] += tScore[1]
-    #     matches.append(newMatch)
+    # qwords = a list of key words asked in the question (doc)
+    qwords = []
+    for w in doc:
+      if w[1] != 'DET' and w[1] != 'VERB' and w[1] != 'PRON' and w[1] != 'PART' and w[1] != 'ADV' and w[1] != 'ADP' and w[1] != 'PUNCT':
+        qwords.append(w[0])
+      if w[1] == 'PUNCT' and len(w[0]) != 1:
+        qwords.append(w[0])
     
-    # # this is to cut out matches that do not have a URL and list the ones that do from Highest score to Lowest
-    # trimMatches = []
-    # for m in matches:
-    #   if "URL" in m["data"]:
-    #     trimMatches.append(m)
-    # matches = trimMatches
-    # matches.sort(key=lambda x: x["score"], reverse=True)
-    
-    # answer = {"matches": matches} 
-    resp.media = data
+    matches = []
+    for module in modSearchData:
+      newMatch = {
+        "id": module["id"],
+        "name": module["name"],
+        "description": module["description"],
+        "URL": module["URL"],
+        "nameMatch": [],
+        "textMatch": [],
+        "score": 0
+      }
+
+      modSearchProfile = module["modSearchProfile"]
+
+      if modSearchProfile["text"] == "NO_TEXT":
+        return
+      else:  
+        for w in qwords:
+          if w in newMatch["name"]: 
+            newMatch["nameMatch"].append((w,2))
+          if w in modSearchProfile["textFreq"]:
+            newMatch["textMatch"].append((w, modSearchProfile["textFreq"][w]))
+
+      if newMatch["score"] == 0 and (newMatch["nameMatch"] != [] or newMatch["textMatch"] != []):
+        for nScore in newMatch["nameMatch"]:
+          newMatch["score"] += nScore[1]
+        for tScore in newMatch["textMatch"]:
+          newMatch["score"] += tScore[1]
+        matches.append(newMatch)
+         
+    matches.sort(key=lambda x: x["score"], reverse=True)
+    resp.media = matches
 
 api = falcon.API()
 api.add_route('/qa', QA())
 
-# Using Python 3.7
-# to install needed tools: `pip3 install gunicorn falcon`
-# to run server cd into `qa_api/` and run this command in terminal: `gunicorn --reload -b 0.0.0.0:8000 qa_api:api`
+# loadTime = time.time() - finalT0
+# print(f"<---QA Ready---> \nLoad Time: {loadTime}")
+
+# To run server cd into `./nlp_backend` and run this command in terminal: `gunicorn --reload --timeout 300 -b 0.0.0.0:8000 qa_api:api`
 # you may then make calls to: `localhost:8000/qa`
-# POST request expects to recieve json = {'question': 'your question'} and returns json = {'answer': 'here is your desired training kit'}
-# To install spacy:
-#   pip3 install -U spacy
-#   python3 -m spacy download en
+# POST request expects to recieve json = {'question': 'your question'} and returns an array of matches

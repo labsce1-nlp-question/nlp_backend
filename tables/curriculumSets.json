@@ -27,7 +27,7 @@
       "Requires Auth": true,
       "Publish": true,
       "Average Level": { "specialValue": "NaN" },
-      "Objectives Count": 115
+      "Objectives Count": 116
     },
     "createdTime": "2019-01-02T16:04:11.000Z"
   },
@@ -653,13 +653,15 @@
         "reclu2nj43hQFPx2p",
         "recgPpsKlD7tjQxoB",
         "recJzWlJjoOf8QUIp",
-        "rec8nC7E8EAYFqaRG"
+        "rec8nC7E8EAYFqaRG",
+        "rece0tbcBVl01xfq6",
+        "recwXzAICs5dfcBw1"
       ],
       "Short ID": "DS",
       "Course": ["recGu1k6cJ9d88gKE"],
       "Requires Auth": true,
       "Publish": true,
-      "Average Level": 0.75,
+      "Average Level": 0.5,
       "Objectives Count": 47
     },
     "createdTime": "2018-09-24T17:46:08.000Z"
