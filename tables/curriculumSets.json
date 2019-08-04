@@ -1,801 +1,875 @@
 [
-  {
-    "id": "rec0OA5VGsxv1SKvj",
-    "fields": {
-      "Name": "UX Design Core",
-      "Description": "We cover UX and UI fundamentals, the UX process, and advanced UX topics.",
-      "Sprints": [
-        "recYrM5Q6LgpnN0Mm",
-        "recFiA17MlpeOjwZi",
-        "recpIGiakwLSWm1dS",
-        "recqidLwS7wDOQTv8",
-        "recRT0W3jqNKZK0vR",
-        "recjIntdnw9uWgTCJ",
-        "recGzKZTW3Y8AA9UZ",
-        "rechMnzQo1g6gr29v",
-        "rechmG7z5ikRqoWOH",
-        "rec9GvqRZGoelFcGT",
-        "recNrHFznMIbs01ZE",
-        "rec3UNewTTB20mV6v",
-        "recDhkxAxMHglFnBa",
-        "recMiazRfkTJYcLN5",
-        "recBuxg8uzDK5vFG4",
-        "recdiFDBPeSje4tzL"
-      ],
-      "Short ID": "UX",
-      "Course": ["recANqTRKQLtriKsJ"],
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": { "specialValue": "NaN" },
-      "Objectives Count": 116
+    {
+        "id": "rec0OA5VGsxv1SKvj",
+        "fields": {
+            "Name": "UX Design Core",
+            "Description": "We cover UX and UI fundamentals, the UX process, and advanced UX topics.",
+            "Sprints": [
+                "recYrM5Q6LgpnN0Mm",
+                "recFiA17MlpeOjwZi",
+                "recpIGiakwLSWm1dS",
+                "recqidLwS7wDOQTv8",
+                "recRT0W3jqNKZK0vR",
+                "recjIntdnw9uWgTCJ",
+                "recGzKZTW3Y8AA9UZ",
+                "rechMnzQo1g6gr29v",
+                "rechmG7z5ikRqoWOH",
+                "rec9GvqRZGoelFcGT",
+                "recNrHFznMIbs01ZE",
+                "rec3UNewTTB20mV6v",
+                "recDhkxAxMHglFnBa",
+                "recMiazRfkTJYcLN5",
+                "recBuxg8uzDK5vFG4",
+                "recdiFDBPeSje4tzL"
+            ],
+            "Short ID": "UX",
+            "Course": [
+                "recANqTRKQLtriKsJ"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": {
+                "specialValue": "NaN"
+            },
+            "Objectives Count": 127
+        },
+        "createdTime": "2019-01-02T16:04:11.000Z"
     },
-    "createdTime": "2019-01-02T16:04:11.000Z"
-  },
-  {
-    "id": "rec1V29UWjK8OGyih",
-    "fields": {
-      "Name": "Android Development Core",
-      "Description": "Weeks 1-15",
-      "Sprints": [
-        "recC5dhR9menaROwx",
-        "recSqm5AAEkJcIl3p",
-        "recRVUSWQEtosl0Cz",
-        "recYJzRdGnyIGofud",
-        "recsulbZ7qtwEknSU",
-        "rec1ThpG6q8Gv9FtE",
-        "rec2Yoj0OJ03sZinM",
-        "recBcK7imVGRTAsYL",
-        "reccwvscsZ3C0Y3IF",
-        "recYWe2J9r9x16kU4",
-        "rec1rdWLm0i4ZZVcw",
-        "recmMArwYcvcbuQqD",
-        "recQmODccUXTnI52v",
-        "recfWySNFDHdwr7Mh",
-        "recPEGsptroTpNXA8"
-      ],
-      "Short ID": "Android",
-      "Course": ["rechUOC9LP4RFzZL3"],
-      "Requires Auth": true,
-      "Average Level": 0.8,
-      "Objectives Count": 233
+    {
+        "id": "rec1V29UWjK8OGyih",
+        "fields": {
+            "Name": "Android Development Core",
+            "Description": "Weeks 1-15",
+            "Sprints": [
+                "recC5dhR9menaROwx",
+                "recSqm5AAEkJcIl3p",
+                "recRVUSWQEtosl0Cz",
+                "recYJzRdGnyIGofud",
+                "recsulbZ7qtwEknSU",
+                "rec1ThpG6q8Gv9FtE",
+                "rec2Yoj0OJ03sZinM",
+                "recBcK7imVGRTAsYL",
+                "reccwvscsZ3C0Y3IF",
+                "recYWe2J9r9x16kU4",
+                "rec1rdWLm0i4ZZVcw",
+                "recmMArwYcvcbuQqD",
+                "recQmODccUXTnI52v",
+                "recfWySNFDHdwr7Mh",
+                "recPEGsptroTpNXA8"
+            ],
+            "Short ID": "Android",
+            "Course": [
+                "rechUOC9LP4RFzZL3"
+            ],
+            "Requires Auth": true,
+            "Average Level": 0.8,
+            "Objectives Count": 233
+        },
+        "createdTime": "2018-07-02T20:39:42.000Z"
     },
-    "createdTime": "2018-07-02T20:39:42.000Z"
-  },
-  {
-    "id": "rec1nzBWYJsCUWmaa",
-    "fields": {
-      "Name": "Lambda Labs",
-      "Description": "Lambda Labs is our immersive capstone experience. Students are assigned to small teams and tasked to turn a project specification into a functional product that accepts paying customers. \n\nEach team receives a Trello board full of tasks they will complete and a wireframe detailing the presentation and functionality of the app. This experience will look and feel like a job at a real-world dev shop. \n\nStudents start each class with a stand-up meeting, led by their PM, where they coordinate and collaborate with their colleagues.   Over the course of Labs, they will complete sprint objectives, participate in code reviews and pair programming, and meet with their client to share progress. \n\nThe Labs experience culminates with a professional code review and a demonstration of the team's application in front of the rest of the school.",
-      "Sprints": [
-        "rec0dFYFDBfPWZclR",
-        "rechzyZDlGMxI9ApR",
-        "rec33mGVnhCZFVYWa",
-        "recs22te7oY64llAl",
-        "recUHb6DrRIIYiDwr",
-        "recUmTvKqRFGMX228"
-      ],
-      "Short ID": "LABS",
-      "Course": [
-        "recIQcBMuETOKCo84",
-        "recUjPmBMgGVAwSA2",
-        "rechUOC9LP4RFzZL3",
-        "recGu1k6cJ9d88gKE",
-        "recANqTRKQLtriKsJ"
-      ],
-      "Requires Auth": true,
-      "Average Level": 1.2083333333333333,
-      "Objectives Count": 29
+    {
+        "id": "rec1nzBWYJsCUWmaa",
+        "fields": {
+            "Name": "Lambda Labs",
+            "Description": "Lambda Labs is our immersive capstone experience. Students are assigned to small teams and tasked to turn a project specification into a functional product that accepts paying customers. \n\nEach team receives a Trello board full of tasks they will complete and a wireframe detailing the presentation and functionality of the app. This experience will look and feel like a job at a real-world dev shop. \n\nStudents start each class with a stand-up meeting, led by their PM, where they coordinate and collaborate with their colleagues.   Over the course of Labs, they will complete sprint objectives, participate in code reviews and pair programming, and meet with their client to share progress. \n\nThe Labs experience culminates with a professional code review and a demonstration of the team's application in front of the rest of the school.",
+            "Sprints": [
+                "rec0dFYFDBfPWZclR",
+                "rechzyZDlGMxI9ApR",
+                "rec33mGVnhCZFVYWa",
+                "recs22te7oY64llAl",
+                "recUHb6DrRIIYiDwr",
+                "recUmTvKqRFGMX228"
+            ],
+            "Short ID": "LABS",
+            "Course": [
+                "recIQcBMuETOKCo84",
+                "recUjPmBMgGVAwSA2",
+                "rechUOC9LP4RFzZL3",
+                "recGu1k6cJ9d88gKE",
+                "recANqTRKQLtriKsJ"
+            ],
+            "Requires Auth": true,
+            "Average Level": 1.2083333333333333,
+            "Objectives Count": 29
+        },
+        "createdTime": "2018-04-19T14:43:54.000Z"
     },
-    "createdTime": "2018-04-19T14:43:54.000Z"
-  },
-  {
-    "id": "rec2T0wUSqQ7DOxLE",
-    "fields": {
-      "Name": "DS - Statistics Fundamentals",
-      "Description": "General statistics and mathematics skills to understand and describe data.",
-      "Sprints": [
-        "recLBojP7nFYhz1EM",
-        "recr0kuGaz6Uf4axZ",
-        "recorynMW4uJ05ASZ",
-        "rec2a82u6kWqXEB45",
-        "recdUopSfNqeQDWwn"
-      ],
-      "Short ID": "DS",
-      "Course": ["recGu1k6cJ9d88gKE"],
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": 2.35,
-      "Objectives Count": 52
+    {
+        "id": "rec2T0wUSqQ7DOxLE",
+        "fields": {
+            "Name": "DS - Statistics Fundamentals",
+            "Description": "General statistics and mathematics skills to understand and describe data.",
+            "Sprints": [
+                "recLBojP7nFYhz1EM",
+                "recr0kuGaz6Uf4axZ",
+                "recorynMW4uJ05ASZ",
+                "rec2a82u6kWqXEB45",
+                "recdUopSfNqeQDWwn"
+            ],
+            "Short ID": "DS",
+            "Course": [
+                "recGu1k6cJ9d88gKE"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": 2.35,
+            "Objectives Count": 52
+        },
+        "createdTime": "2018-09-24T17:45:52.000Z"
     },
-    "createdTime": "2018-09-24T17:45:52.000Z"
-  },
-  {
-    "id": "rec7XX6zQg0SxrTq2",
-    "fields": {
-      "Name": "DS - Computer Science",
-      "Description": "5 weeks of Computer Science coursework completed using Python. Students are exposed to common data structures and algorithms, the theory of computation, and other fundamentals of Computer Science.",
-      "Sprints": [
-        "recm4nrk0VPEMz8w8",
-        "rec7U9K7OCL5ihj0t",
-        "recR4gHcvD21ziR9a",
-        "recd9grrKlURJ453N",
-        "recd4D4w3QrigPqUF"
-      ],
-      "Short ID": "DS",
-      "Course": ["recGu1k6cJ9d88gKE"],
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": 1.6,
-      "Objectives Count": 24
+    {
+        "id": "rec7XX6zQg0SxrTq2",
+        "fields": {
+            "Name": "DS - Computer Science",
+            "Description": "5 weeks of Computer Science coursework completed using Python. Students are exposed to common data structures and algorithms, the theory of computation, and other fundamentals of Computer Science.",
+            "Sprints": [
+                "recm4nrk0VPEMz8w8",
+                "rec7U9K7OCL5ihj0t",
+                "recR4gHcvD21ziR9a",
+                "recd9grrKlURJ453N",
+                "recd4D4w3QrigPqUF"
+            ],
+            "Short ID": "DS",
+            "Course": [
+                "recGu1k6cJ9d88gKE"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": 1.4,
+            "Objectives Count": 24
+        },
+        "createdTime": "2019-01-23T22:53:29.000Z"
     },
-    "createdTime": "2019-01-23T22:53:29.000Z"
-  },
-  {
-    "id": "rec8HV7Lg0nyHk8Rc",
-    "fields": {
-      "Name": "Computer Science Annex",
-      "Description": "This is CS material that is not in the current curriculum.",
-      "Sprints": [
-        "recKzV5STy8vYnbQ1",
-        "recUHGX7arXkBIutr",
-        "rec64nbdwB28JM7Qu",
-        "reczMSFEG5pffpADx",
-        "recm4nrk0VPEMz8w8",
-        "recTTpwFpgZXtPG2o",
-        "recQ277OLX2zZXPKd",
-        "recTXsleEkanZP75b"
-      ],
-      "Short ID": "CS-ANNEX",
-      "Requires Auth": true,
-      "Average Level": 1.7083333333333335,
-      "Objectives Count": 30
+    {
+        "id": "rec8HV7Lg0nyHk8Rc",
+        "fields": {
+            "Name": "Computer Science Annex",
+            "Description": "This is CS material that is not in the current curriculum.",
+            "Sprints": [
+                "recKzV5STy8vYnbQ1",
+                "recUHGX7arXkBIutr",
+                "rec64nbdwB28JM7Qu",
+                "reczMSFEG5pffpADx",
+                "recm4nrk0VPEMz8w8",
+                "recTTpwFpgZXtPG2o",
+                "recQ277OLX2zZXPKd",
+                "recTXsleEkanZP75b"
+            ],
+            "Short ID": "CS-ANNEX",
+            "Requires Auth": true,
+            "Average Level": 1.7083333333333335,
+            "Objectives Count": 30
+        },
+        "createdTime": "2019-01-30T17:13:32.000Z"
     },
-    "createdTime": "2019-01-30T17:13:32.000Z"
-  },
-  {
-    "id": "recAefNoNujtZ1jml",
-    "fields": {
-      "Name": "Computer Science - Legacy",
-      "Sprints": ["recd9grrKlURJ453N", "recd4D4w3QrigPqUF"],
-      "Short ID": "CSLegacy",
-      "Average Level": 2.75,
-      "Objectives Count": 15
+    {
+        "id": "recAefNoNujtZ1jml",
+        "fields": {
+            "Name": "Computer Science - Legacy",
+            "Sprints": [
+                "recd9grrKlURJ453N",
+                "recd4D4w3QrigPqUF"
+            ],
+            "Short ID": "CSLegacy",
+            "Average Level": 2.25,
+            "Objectives Count": 15
+        },
+        "createdTime": "2019-07-06T18:01:53.000Z"
     },
-    "createdTime": "2019-07-06T18:01:53.000Z"
-  },
-  {
-    "id": "recB529sOtMbcBtIn",
-    "fields": {
-      "Name": "Precourse UX",
-      "Description": "Required work completed before student begins class.",
-      "Sprints": ["recPJ18QZ6OBl4xpI"],
-      "Short ID": "UX-PRE",
-      "Publish": true,
-      "Average Level": 1.125,
-      "Objectives Count": 25
+    {
+        "id": "recB529sOtMbcBtIn",
+        "fields": {
+            "Name": "Precourse UX",
+            "Description": "Required work completed before student begins class.",
+            "Sprints": [
+                "recPJ18QZ6OBl4xpI"
+            ],
+            "Short ID": "UX-PRE",
+            "Publish": true,
+            "Average Level": 1.125,
+            "Objectives Count": 25
+        },
+        "createdTime": "2018-06-29T22:36:32.000Z"
     },
-    "createdTime": "2018-06-29T22:36:32.000Z"
-  },
-  {
-    "id": "recEpbffuddAjD376",
-    "fields": {
-      "Name": "Web Applications I",
-      "Sprints": [
-        "recwKyMueNtoTTmUD",
-        "recRT8JKvbTiGaosk",
-        "recYL2HDPPpkDmGEm",
-        "recPSZMPrmESUYo2C"
-      ],
-      "Short ID": "WEB2",
-      "Course": ["recUjPmBMgGVAwSA2"],
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": 2.0625,
-      "Objectives Count": 46
+    {
+        "id": "recEpbffuddAjD376",
+        "fields": {
+            "Name": "Web Applications I",
+            "Sprints": [
+                "recwKyMueNtoTTmUD",
+                "recRT8JKvbTiGaosk",
+                "recYL2HDPPpkDmGEm",
+                "recPSZMPrmESUYo2C"
+            ],
+            "Short ID": "WEB2",
+            "Course": [
+                "recUjPmBMgGVAwSA2"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": 2.0625,
+            "Objectives Count": 46
+        },
+        "createdTime": "2019-07-05T21:58:01.000Z"
     },
-    "createdTime": "2019-07-05T21:58:01.000Z"
-  },
-  {
-    "id": "recFIsDg0qlCqJjyS",
-    "fields": {
-      "Name": "Web Fundamentals",
-      "Sprints": [
-        "rec2di8phTBw15e4E",
-        "recclZwJxMU8kUngT",
-        "recIXiQgpgMdJ81ms",
-        "recfwZvI7QhMa7xbG"
-      ],
-      "Short ID": "WEB1",
-      "Course": ["recUjPmBMgGVAwSA2"],
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": 1.875,
-      "Objectives Count": 37
+    {
+        "id": "recFIsDg0qlCqJjyS",
+        "fields": {
+            "Name": "Web Fundamentals",
+            "Sprints": [
+                "rec2di8phTBw15e4E",
+                "recclZwJxMU8kUngT",
+                "recIXiQgpgMdJ81ms",
+                "recfwZvI7QhMa7xbG"
+            ],
+            "Short ID": "WEB1",
+            "Course": [
+                "recUjPmBMgGVAwSA2"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": 1.875,
+            "Objectives Count": 37
+        },
+        "createdTime": "2019-07-05T21:52:13.000Z"
     },
-    "createdTime": "2019-07-05T21:52:13.000Z"
-  },
-  {
-    "id": "recHaxla0vkrlL27u",
-    "fields": {
-      "Name": "Instructor Training",
-      "Description": "Education team trainings formatted in Training Kit.",
-      "Sprints": ["recW3YvuBMEHtFat4"],
-      "Short ID": "LS-EDU",
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": 0,
-      "Objectives Count": 1
+    {
+        "id": "recHaxla0vkrlL27u",
+        "fields": {
+            "Name": "Instructor Training",
+            "Description": "Education team trainings formatted in Training Kit.",
+            "Sprints": [
+                "recW3YvuBMEHtFat4"
+            ],
+            "Short ID": "LS-EDU",
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": 0,
+            "Objectives Count": 1
+        },
+        "createdTime": "2018-07-11T15:56:11.000Z"
     },
-    "createdTime": "2018-07-11T15:56:11.000Z"
-  },
-  {
-    "id": "recKFQUg4p9OxhUkA",
-    "fields": {
-      "Name": "Lambda Next",
-      "Description": "Students are required to complete their curriculum and badge prior to beginning Next. This program is to aid students in their job search by assigning students a PM to hold them accountable to complete their daily and weekly goals. ",
-      "Sprints": [
-        "rec9zhM85zmepFMCz",
-        "reczSWy1eB5WbHfmF",
-        "recFfdFjGKS3RGPAf",
-        "recpEBn4k5cou9jIV",
-        "rec69NXTYEPdeasAh",
-        "recYAVDyqBLE0zUqT"
-      ],
-      "Short ID": "NXT",
-      "Course": [
-        "recUjPmBMgGVAwSA2",
-        "recGu1k6cJ9d88gKE",
-        "recIQcBMuETOKCo84",
-        "rechUOC9LP4RFzZL3",
-        "recANqTRKQLtriKsJ"
-      ],
-      "Publish": true,
-      "Average Level": 0.5555555555555557,
-      "Objectives Count": 26
+    {
+        "id": "recKFQUg4p9OxhUkA",
+        "fields": {
+            "Name": "Lambda Next",
+            "Description": "Students are required to complete their curriculum and badge prior to beginning Next. This program is to aid students in their job search by assigning students a PM to hold them accountable to complete their daily and weekly goals. ",
+            "Sprints": [
+                "rec9zhM85zmepFMCz",
+                "reczSWy1eB5WbHfmF",
+                "recFfdFjGKS3RGPAf",
+                "recpEBn4k5cou9jIV",
+                "rec69NXTYEPdeasAh",
+                "recYAVDyqBLE0zUqT"
+            ],
+            "Short ID": "NXT",
+            "Course": [
+                "recUjPmBMgGVAwSA2",
+                "recGu1k6cJ9d88gKE",
+                "recIQcBMuETOKCo84",
+                "rechUOC9LP4RFzZL3",
+                "recANqTRKQLtriKsJ"
+            ],
+            "Publish": true,
+            "Average Level": 0.5555555555555557,
+            "Objectives Count": 26
+        },
+        "createdTime": "2018-09-18T17:28:59.000Z"
     },
-    "createdTime": "2018-09-18T17:28:59.000Z"
-  },
-  {
-    "id": "recLuhRKolTUmT7KU",
-    "fields": {
-      "Name": "UX Web and Labs Prep Unit",
-      "Description": "Front-end Web Coding Fundamentals for UX",
-      "Sprints": [
-        "recSj7D1MnfSc54rM",
-        "recDFCRUNVxt4ZCq7",
-        "recXp8tCQi7tVzuJL",
-        "recGpyFrR6PPmHBY7",
-        "recTK97DRZq5kv1bZ"
-      ],
-      "Short ID": "UX-WEB",
-      "Requires Auth": true,
-      "Average Level": { "specialValue": "NaN" },
-      "Objectives Count": 9
+    {
+        "id": "recLuhRKolTUmT7KU",
+        "fields": {
+            "Name": "UX Web and Labs Prep Unit",
+            "Description": "Front-end Web Coding Fundamentals for UX",
+            "Sprints": [
+                "recSj7D1MnfSc54rM",
+                "recDFCRUNVxt4ZCq7",
+                "recXp8tCQi7tVzuJL",
+                "recGpyFrR6PPmHBY7",
+                "recTK97DRZq5kv1bZ"
+            ],
+            "Short ID": "UX-WEB",
+            "Requires Auth": true,
+            "Average Level": {
+                "specialValue": "NaN"
+            },
+            "Objectives Count": 9
+        },
+        "createdTime": "2019-01-02T18:54:13.000Z"
     },
-    "createdTime": "2019-01-02T18:54:13.000Z"
-  },
-  {
-    "id": "recPhHwk05xgnduyh",
-    "fields": {
-      "Name": "Machine Learning Core",
-      "Sprints": [
-        "recWVCFzjlIZRqOQa",
-        "rec4hPrWfoX2DzprF",
-        "recSRRmf9KFqgssyf",
-        "recxgkGr1SztPaITN",
-        "recvX2ELG1Yj4jtBG",
-        "recTEuIE5xHWFOcgS",
-        "recbMhahJc5OnIhMu",
-        "recNsit7uq4ufdxDu",
-        "recq21e8B4D0P0e5t",
-        "rec2qku05tBM5uzWJ",
-        "reclaMdCm4sEVwTqS",
-        "recfycpvzCGOXLz7M",
-        "rec3W6n9EzxF9ga7y",
-        "rec7K0lB7cSU6duNl",
-        "recZrSypOoKUVcKVd",
-        "recmWNhkmAGzmUox3",
-        "recELerz9zEmekMIa",
-        "recfAMAsnSsPjmBOF",
-        "recYPr8LCK7C1hVzO",
-        "recinUYOf5W5Kk5cw",
-        "reckGwqDe8LDEDWum",
-        "recur9dwLvQg3SUmp",
-        "recmZV49el0pJSxJX",
-        "rechiHWa1kgoT7uCQ",
-        "recrEDgbxjv9tQIP0",
-        "recEcbcIunAX7WT3K",
-        "recJr62c4PXTGDxRY"
-      ],
-      "Short ID": "ML",
-      "Requires Auth": true,
-      "Average Level": 0.8919753086419754,
-      "Objectives Count": 172
+    {
+        "id": "recPhHwk05xgnduyh",
+        "fields": {
+            "Name": "Machine Learning Core",
+            "Sprints": [
+                "recWVCFzjlIZRqOQa",
+                "rec4hPrWfoX2DzprF",
+                "recSRRmf9KFqgssyf",
+                "recxgkGr1SztPaITN",
+                "recvX2ELG1Yj4jtBG",
+                "recTEuIE5xHWFOcgS",
+                "recbMhahJc5OnIhMu",
+                "recNsit7uq4ufdxDu",
+                "recq21e8B4D0P0e5t",
+                "rec2qku05tBM5uzWJ",
+                "reclaMdCm4sEVwTqS",
+                "recfycpvzCGOXLz7M",
+                "rec3W6n9EzxF9ga7y",
+                "rec7K0lB7cSU6duNl",
+                "recZrSypOoKUVcKVd",
+                "recmWNhkmAGzmUox3",
+                "recELerz9zEmekMIa",
+                "recfAMAsnSsPjmBOF",
+                "recYPr8LCK7C1hVzO",
+                "recinUYOf5W5Kk5cw",
+                "reckGwqDe8LDEDWum",
+                "recur9dwLvQg3SUmp",
+                "recmZV49el0pJSxJX",
+                "rechiHWa1kgoT7uCQ",
+                "recrEDgbxjv9tQIP0",
+                "recEcbcIunAX7WT3K",
+                "recJr62c4PXTGDxRY"
+            ],
+            "Short ID": "ML",
+            "Requires Auth": true,
+            "Average Level": 0.8919753086419754,
+            "Objectives Count": 172
+        },
+        "createdTime": "2018-04-23T16:20:48.000Z"
     },
-    "createdTime": "2018-04-23T16:20:48.000Z"
-  },
-  {
-    "id": "recQ63rCHddlzh0Vf",
-    "fields": {
-      "Name": "DS - Annex",
-      "Description": "Formerly taught but still useful material - study and explore the big world of Data Science!",
-      "Sprints": [
-        "recADjP90jTWtUcWL",
-        "rec4hdPIn5zP7PmIl",
-        "recBepxNchOvqinuV",
-        "recDHFxsTGkUtLrLI",
-        "rec1n1XpuGz9uPzck",
-        "rec4dSxzmGcaJu6da"
-      ],
-      "Short ID": "DS",
-      "Course": ["recGu1k6cJ9d88gKE"],
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": 1.375,
-      "Objectives Count": 43
+    {
+        "id": "recQ63rCHddlzh0Vf",
+        "fields": {
+            "Name": "DS - Annex",
+            "Description": "Formerly taught but still useful material - study and explore the big world of Data Science!",
+            "Sprints": [
+                "recADjP90jTWtUcWL",
+                "rec4hdPIn5zP7PmIl",
+                "recBepxNchOvqinuV",
+                "recDHFxsTGkUtLrLI",
+                "rec1n1XpuGz9uPzck",
+                "rec4dSxzmGcaJu6da"
+            ],
+            "Short ID": "DS",
+            "Course": [
+                "recGu1k6cJ9d88gKE"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": 1.375,
+            "Objectives Count": 43
+        },
+        "createdTime": "2018-12-12T22:28:29.000Z"
     },
-    "createdTime": "2018-12-12T22:28:29.000Z"
-  },
-  {
-    "id": "recS7G6cScoQ5nznK",
-    "fields": {
-      "Name": "Data Science Core",
-      "Description": "Preview of Data Science coursework.\n\n",
-      "Short ID": "DS",
-      "Requires Auth": true,
-      "Publish": true,
-      "Advisory Council Reviews": [
-        "recrf23dd0EP8a0A3",
-        "recvYQcg87V2wNHiR",
-        "recTeWBkwpvXOyTwJ",
-        "recJ2Ha79Wv5JNkUF"
-      ],
-      "Average Level": { "specialValue": "NaN" },
-      "Objectives Count": 0
+    {
+        "id": "recS7G6cScoQ5nznK",
+        "fields": {
+            "Name": "Data Science Core",
+            "Description": "Preview of Data Science coursework.\n\n",
+            "Short ID": "DS",
+            "Requires Auth": true,
+            "Publish": true,
+            "Advisory Council Reviews": [
+                "recrf23dd0EP8a0A3",
+                "recvYQcg87V2wNHiR",
+                "recTeWBkwpvXOyTwJ",
+                "recJ2Ha79Wv5JNkUF"
+            ],
+            "Average Level": {
+                "specialValue": "NaN"
+            },
+            "Objectives Count": 0
+        },
+        "createdTime": "2018-07-26T23:32:26.000Z"
     },
-    "createdTime": "2018-07-26T23:32:26.000Z"
-  },
-  {
-    "id": "recSPJj1d5K9LIEUy",
-    "fields": {
-      "Name": "Java Backend Development",
-      "Short ID": "JX",
-      "Requires Auth": true,
-      "Average Level": { "specialValue": "NaN" },
-      "Objectives Count": 0
+    {
+        "id": "recSPJj1d5K9LIEUy",
+        "fields": {
+            "Name": "Java Backend Development",
+            "Short ID": "JX",
+            "Requires Auth": true,
+            "Average Level": {
+                "specialValue": "NaN"
+            },
+            "Objectives Count": 0
+        },
+        "createdTime": "2019-01-30T17:13:02.000Z"
     },
-    "createdTime": "2019-01-30T17:13:02.000Z"
-  },
-  {
-    "id": "recSe8zpSDB3QbNwP",
-    "fields": {
-      "Name": "Precourse Android",
-      "Description": "Required work completed before student begins class.",
-      "Sprints": ["recxCgSftw66RQ9Io"],
-      "Short ID": "AND-PRE",
-      "Course": ["rechUOC9LP4RFzZL3"],
-      "Publish": true,
-      "Average Level": 1,
-      "Objectives Count": 48
+    {
+        "id": "recSe8zpSDB3QbNwP",
+        "fields": {
+            "Name": "Precourse Android",
+            "Description": "Required work completed before student begins class.",
+            "Sprints": [
+                "recxCgSftw66RQ9Io"
+            ],
+            "Short ID": "AND-PRE",
+            "Course": [
+                "rechUOC9LP4RFzZL3"
+            ],
+            "Publish": true,
+            "Average Level": 1,
+            "Objectives Count": 48
+        },
+        "createdTime": "2018-07-02T20:39:18.000Z"
     },
-    "createdTime": "2018-07-02T20:39:18.000Z"
-  },
-  {
-    "id": "recWD0JQCJHokOPJY",
-    "fields": {
-      "Name": "Web API: Node",
-      "Sprints": [
-        "recWkcWui91eG1s8q",
-        "recozTHaHJe6L1ThN",
-        "receFLR7MpwQXesIN",
-        "reckzQd7ZgiFY5ok5"
-      ],
-      "Short ID": "WEB4Node",
-      "Course": ["recUjPmBMgGVAwSA2"],
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": 2.9375,
-      "Objectives Count": 38
+    {
+        "id": "recWD0JQCJHokOPJY",
+        "fields": {
+            "Name": "Web API: Node",
+            "Sprints": [
+                "recWkcWui91eG1s8q",
+                "recozTHaHJe6L1ThN",
+                "receFLR7MpwQXesIN",
+                "reckzQd7ZgiFY5ok5"
+            ],
+            "Short ID": "WEB4Node",
+            "Course": [
+                "recUjPmBMgGVAwSA2"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": 2.9375,
+            "Objectives Count": 38
+        },
+        "createdTime": "2019-07-05T22:03:43.000Z"
     },
-    "createdTime": "2019-07-05T22:03:43.000Z"
-  },
-  {
-    "id": "recYWZuliViBDz0tm",
-    "fields": {
-      "Name": "DS - Data Engineering",
-      "Description": "Building reusable, scalable, and reproducible systems with data.",
-      "Sprints": [
-        "recUobfsXtPc0GUEF",
-        "recvbdRfBNCqSB4hd",
-        "recV8wEgPdwWmUInW",
-        "recA7O3QeO8AQxsxE"
-      ],
-      "Short ID": "DS",
-      "Course": ["recGu1k6cJ9d88gKE"],
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": 2.5,
-      "Objectives Count": 25
+    {
+        "id": "recYWZuliViBDz0tm",
+        "fields": {
+            "Name": "DS - Data Engineering",
+            "Description": "Building reusable, scalable, and reproducible systems with data.",
+            "Sprints": [
+                "recUobfsXtPc0GUEF",
+                "recvbdRfBNCqSB4hd",
+                "recV8wEgPdwWmUInW",
+                "recA7O3QeO8AQxsxE"
+            ],
+            "Short ID": "DS",
+            "Course": [
+                "recGu1k6cJ9d88gKE"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": 2.5,
+            "Objectives Count": 25
+        },
+        "createdTime": "2018-09-24T17:47:04.000Z"
     },
-    "createdTime": "2018-09-24T17:47:04.000Z"
-  },
-  {
-    "id": "recZDELh3GRKrHcBA",
-    "fields": {
-      "Name": "Web API: Java",
-      "Description": "The Lambda School Enterprise Java Back End Course concentrates on learning Object Oriented Programming, the strongly typed language Java and how Java interacts with databases using Spring Boot and REST API Services. The JetBrains IntelliJ IDEA IDE and Maven are used to integrate services with a RDBMS using JPA and Hibernate while deploying those web services using Tomcat. Swagger is used for REST documentation; JUnit and RestAssured are used to Unit Testing and Test Driven Development (TDD). Using Java 11, students study both current best practices and legacy code with the goal of being comfortable working with Java 8+. The students also receive some exposure to message queueing using RabbitMQ, in-memory caching with Redis, and continuous deployment to the cloud. Overall the course is preparing students to be ready to integrate into current Java Spring Teams!\n\nThe work is hard but very rewarding and enjoyable! I hope you decide to join the class. If you have already joined, Welcome!!! If you decide not join, enjoy your other courses and feel free to reach out with future Java Questions!\n\nThis is a list of some of my favorite Java Resources. Feel free to use, study, and learn!\n[https://github.com/LambdaSchool/java-resources.git](https://github.com/LambdaSchool/java-resources.git)",
-      "Sprints": [
-        "recC5dhR9menaROwx",
-        "recSqm5AAEkJcIl3p",
-        "recRVUSWQEtosl0Cz",
-        "recoJ4ZqNQWX3cy6E"
-      ],
-      "Short ID": "WEB4Java",
-      "Course": ["recUjPmBMgGVAwSA2", "recZajS3qPtraWv1w"],
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": 0.75,
-      "Objectives Count": 53
+    {
+        "id": "recZDELh3GRKrHcBA",
+        "fields": {
+            "Name": "Web API: Java",
+            "Description": "The Lambda School Enterprise Java Back End Course concentrates on learning Object Oriented Programming, the strongly typed language Java and how Java interacts with databases using Spring Boot and REST API Services. The JetBrains IntelliJ IDEA IDE and Maven are used to integrate services with a RDBMS using JPA and Hibernate while deploying those web services using Tomcat. Swagger is used for REST documentation; JUnit and RestAssured are used to Unit Testing and Test Driven Development (TDD). Using Java 11, students study both current best practices and legacy code with the goal of being comfortable working with Java 8+. The students also receive some exposure to message queueing using RabbitMQ, in-memory caching with Redis, and continuous deployment to the cloud. Overall the course is preparing students to be ready to integrate into current Java Spring Teams!\n\nThe work is hard but very rewarding and enjoyable! I hope you decide to join the class. If you have already joined, Welcome!!! If you decide not join, enjoy your other courses and feel free to reach out with future Java Questions!\n\nThis is a list of some of my favorite Java Resources. Feel free to use, study, and learn!\n[https://github.com/LambdaSchool/java-resources.git](https://github.com/LambdaSchool/java-resources.git)",
+            "Sprints": [
+                "recC5dhR9menaROwx",
+                "recSqm5AAEkJcIl3p",
+                "recRVUSWQEtosl0Cz",
+                "recoJ4ZqNQWX3cy6E"
+            ],
+            "Short ID": "WEB4Java",
+            "Course": [
+                "recUjPmBMgGVAwSA2",
+                "recZajS3qPtraWv1w"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": 0.75,
+            "Objectives Count": 53
+        },
+        "createdTime": "2019-07-05T22:08:24.000Z"
     },
-    "createdTime": "2019-07-05T22:08:24.000Z"
-  },
-  {
-    "id": "recaXooVhMqOWC7vJ",
-    "fields": {
-      "Name": "Career Development",
-      "Description": "All things Career Readiness. This is a mandatory set of presentations for students to learn; how to put together a well rounded resume/linkedin profile, how to navigate the job search and network, and how to nail their interviews and negotiate offers. ",
-      "Sprints": [
-        "recq8e4kAHFyR28ju",
-        "rech7g4cZNrvEr5KW",
-        "recik8Jydie2A0lEa",
-        "recFsbIJCXzTlWydm"
-      ],
-      "Short ID": "CD",
-      "Course": [
-        "recUjPmBMgGVAwSA2",
-        "recIQcBMuETOKCo84",
-        "rechUOC9LP4RFzZL3",
-        "recGu1k6cJ9d88gKE"
-      ],
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": 1.75,
-      "Objectives Count": 11
+    {
+        "id": "recaXooVhMqOWC7vJ",
+        "fields": {
+            "Name": "Career Development",
+            "Description": "All things Career Readiness. This is a mandatory set of presentations for students to learn; how to put together a well rounded resume/linkedin profile, how to navigate the job search and network, and how to nail their interviews and negotiate offers. ",
+            "Sprints": [
+                "recq8e4kAHFyR28ju",
+                "rech7g4cZNrvEr5KW",
+                "recik8Jydie2A0lEa",
+                "recFsbIJCXzTlWydm"
+            ],
+            "Short ID": "CD",
+            "Course": [
+                "recUjPmBMgGVAwSA2",
+                "recIQcBMuETOKCo84",
+                "rechUOC9LP4RFzZL3",
+                "recGu1k6cJ9d88gKE"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": 1.75,
+            "Objectives Count": 11
+        },
+        "createdTime": "2017-11-14T17:02:15.000Z"
     },
-    "createdTime": "2017-11-14T17:02:15.000Z"
-  },
-  {
-    "id": "recbBxZ1kq3MPoD2d",
-    "fields": {
-      "Name": "Brownbag Presentations",
-      "Sprints": ["recgiQDKNaODHOBdH"],
-      "Short ID": "BB",
-      "Average Level": 0,
-      "Objectives Count": 0
+    {
+        "id": "recbBxZ1kq3MPoD2d",
+        "fields": {
+            "Name": "Brownbag Presentations",
+            "Sprints": [
+                "recgiQDKNaODHOBdH"
+            ],
+            "Short ID": "BB",
+            "Average Level": 0,
+            "Objectives Count": 0
+        },
+        "createdTime": "2018-12-12T16:52:14.000Z"
     },
-    "createdTime": "2018-12-12T16:52:14.000Z"
-  },
-  {
-    "id": "reccxvaplFkRmX75d",
-    "fields": {
-      "Name": "Precourse DS",
-      "Description": "Required work to be completed before the student begins class.",
-      "Sprints": ["recimtnGaWpVMMDZw"],
-      "Short ID": "DS-PRE",
-      "Course": ["recGu1k6cJ9d88gKE"],
-      "Publish": true,
-      "Average Level": 1,
-      "Objectives Count": 36
+    {
+        "id": "reccxvaplFkRmX75d",
+        "fields": {
+            "Name": "Precourse DS",
+            "Description": "Required work to be completed before the student begins class.",
+            "Sprints": [
+                "recimtnGaWpVMMDZw"
+            ],
+            "Short ID": "DS-PRE",
+            "Course": [
+                "recGu1k6cJ9d88gKE"
+            ],
+            "Publish": true,
+            "Average Level": 1,
+            "Objectives Count": 36
+        },
+        "createdTime": "2018-08-27T17:55:57.000Z"
     },
-    "createdTime": "2018-08-27T17:55:57.000Z"
-  },
-  {
-    "id": "receGdnCsuIWpfAMk",
-    "fields": {
-      "Name": "Career Readiness",
-      "Sprints": [
-        "recX5xseDC08JM5ZI",
-        "recl2d0YfOGAlM8S3",
-        "rec1p8hmgFTk6g9fz",
-        "reczbkdSRbXnliIds",
-        "recY8JniPAYiyBkdA",
-        "recpYX32YK6PTHCv2",
-        "reckNBVBk8Dr3ManC",
-        "recJNA9yKq5wtDqSG",
-        "recdMu1kj9lKKMzBi",
-        "recXTDzgCzO8PEmOs",
-        "recqTcLOLdc719Ie7",
-        "rec9h6gFJ3nh0yzve",
-        "rec0uIMgOv1kxZncp",
-        "recYGRnwPPZuNUXZq",
-        "recevxobvOSSg3nzd",
-        "recqZAtNtjTC5GAJh",
-        "recPBTs84COplDYm6",
-        "recJesNNkUFSsjqnv",
-        "recasYYZGAH1sAnPX",
-        "recqMOcFStSZAveit",
-        "recXOpK6geXY9pa1u"
-      ],
-      "Short ID": "CR",
-      "Course": ["recsmv0dKIT9EcRuY"],
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": 1.619047619047619,
-      "Objectives Count": 46
+    {
+        "id": "receGdnCsuIWpfAMk",
+        "fields": {
+            "Name": "Career Readiness",
+            "Sprints": [
+                "recX5xseDC08JM5ZI",
+                "recl2d0YfOGAlM8S3",
+                "rec1p8hmgFTk6g9fz",
+                "reczbkdSRbXnliIds",
+                "recY8JniPAYiyBkdA",
+                "recpYX32YK6PTHCv2",
+                "reckNBVBk8Dr3ManC",
+                "recJNA9yKq5wtDqSG",
+                "recdMu1kj9lKKMzBi",
+                "recXTDzgCzO8PEmOs",
+                "recqTcLOLdc719Ie7",
+                "rec9h6gFJ3nh0yzve",
+                "rec0uIMgOv1kxZncp",
+                "recYGRnwPPZuNUXZq",
+                "recevxobvOSSg3nzd",
+                "recqZAtNtjTC5GAJh",
+                "recPBTs84COplDYm6",
+                "recJesNNkUFSsjqnv",
+                "recasYYZGAH1sAnPX",
+                "recqMOcFStSZAveit",
+                "recXOpK6geXY9pa1u"
+            ],
+            "Short ID": "CR",
+            "Course": [
+                "recsmv0dKIT9EcRuY"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": 1.619047619047619,
+            "Objectives Count": 46
+        },
+        "createdTime": "2018-12-18T19:12:52.000Z"
     },
-    "createdTime": "2018-12-18T19:12:52.000Z"
-  },
-  {
-    "id": "recgM0g4m7gYPFYg7",
-    "fields": {
-      "Name": "DS - Machine Learning",
-      "Description": "Neural Networks, Deep Learning, and the State of the Art Machine Learning. In this Unit, we'll also touch on Artificial Intelligence Ethics and describe the quest for Artificial General Intelligence.",
-      "Sprints": [
-        "rec16ljHxQK6XRfQe",
-        "rec5inpL5t6W30CFH",
-        "recUR5N8Vo1lO7gvr",
-        "recBptZbfRxhQFbIE"
-      ],
-      "Short ID": "DS",
-      "Course": ["recGu1k6cJ9d88gKE"],
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": 0.4375,
-      "Objectives Count": 19
+    {
+        "id": "recgM0g4m7gYPFYg7",
+        "fields": {
+            "Name": "DS - Machine Learning",
+            "Description": "Neural Networks, Deep Learning, and the State of the Art Machine Learning. In this Unit, we'll also touch on Artificial Intelligence Ethics and describe the quest for Artificial General Intelligence.",
+            "Sprints": [
+                "rec16ljHxQK6XRfQe",
+                "rec5inpL5t6W30CFH",
+                "recUR5N8Vo1lO7gvr",
+                "recBptZbfRxhQFbIE"
+            ],
+            "Short ID": "DS",
+            "Course": [
+                "recGu1k6cJ9d88gKE"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": 0.4375,
+            "Objectives Count": 19
+        },
+        "createdTime": "2018-09-24T17:46:27.000Z"
     },
-    "createdTime": "2018-09-24T17:46:27.000Z"
-  },
-  {
-    "id": "reck32kGlsKguzNTQ",
-    "fields": {
-      "Name": "Technical Leadership",
-      "Short ID": "TL",
-      "Requires Auth": true,
-      "Average Level": { "specialValue": "NaN" },
-      "Objectives Count": 0
+    {
+        "id": "reck32kGlsKguzNTQ",
+        "fields": {
+            "Name": "Technical Leadership",
+            "Short ID": "TL",
+            "Requires Auth": true,
+            "Average Level": {
+                "specialValue": "NaN"
+            },
+            "Objectives Count": 0
+        },
+        "createdTime": "2017-11-14T17:02:11.000Z"
     },
-    "createdTime": "2017-11-14T17:02:11.000Z"
-  },
-  {
-    "id": "reck6605IRE6S3vFi",
-    "fields": {
-      "Name": "Technical Mastery",
-      "Description": "Curriculum that introduces and reinforces concepts around solving technical problems.",
-      "Sprints": ["recbjtOOBaYfC1xUL"],
-      "Short ID": "TM",
-      "Requires Auth": true,
-      "Average Level": 0,
-      "Objectives Count": 2
+    {
+        "id": "reck6605IRE6S3vFi",
+        "fields": {
+            "Name": "Technical Mastery",
+            "Description": "Curriculum that introduces and reinforces concepts around solving technical problems.",
+            "Sprints": [
+                "recbjtOOBaYfC1xUL"
+            ],
+            "Short ID": "TM",
+            "Requires Auth": true,
+            "Average Level": 0,
+            "Objectives Count": 2
+        },
+        "createdTime": "2019-02-01T17:59:54.000Z"
     },
-    "createdTime": "2019-02-01T17:59:54.000Z"
-  },
-  {
-    "id": "reckzcl3y7yXys08v",
-    "fields": {
-      "Name": "iOS Development Core",
-      "Description": "iOS Development coursework that takes students from fundamental knowledge of Swift through `UIKit`, `Foundation`, and building professional apps.",
-      "Sprints": [
-        "recdWxGWhIlf3Lnuh",
-        "recLhkpzlG8wR1EDA",
-        "recFCRbpCdn9qohk6",
-        "recXg0dAYjKEFXVCV",
-        "recoGLj03Afqu8m6Q",
-        "recR8wktnfx83A2GO",
-        "recCi5lM0dLc9n1mA",
-        "recZdExe2c5Fx0V4W",
-        "recacnrDlqd98RbVE",
-        "reckcvBkSjF0iCZGf",
-        "recHGMcGWnzCdsrgj",
-        "rec8SOVctRZ64IuRt",
-        "reccsjG3pY9rD8uXJ",
-        "recU0XbniP9rWCksa",
-        "recmjxeO91PpDy8ks",
-        "recoCrIOkHUmrt6HN"
-      ],
-      "Short ID": "iOS",
-      "Course": ["recIQcBMuETOKCo84"],
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": 1.2239583333333333,
-      "Objectives Count": 222
+    {
+        "id": "reckzcl3y7yXys08v",
+        "fields": {
+            "Name": "iOS Development Core",
+            "Description": "iOS Development coursework that takes students from fundamental knowledge of Swift through `UIKit`, `Foundation`, and building professional apps.",
+            "Sprints": [
+                "recdWxGWhIlf3Lnuh",
+                "recLhkpzlG8wR1EDA",
+                "recFCRbpCdn9qohk6",
+                "recXg0dAYjKEFXVCV",
+                "recoGLj03Afqu8m6Q",
+                "recR8wktnfx83A2GO",
+                "recCi5lM0dLc9n1mA",
+                "recZdExe2c5Fx0V4W",
+                "recacnrDlqd98RbVE",
+                "reckcvBkSjF0iCZGf",
+                "recHGMcGWnzCdsrgj",
+                "rec8SOVctRZ64IuRt",
+                "reccsjG3pY9rD8uXJ",
+                "recU0XbniP9rWCksa",
+                "recmjxeO91PpDy8ks",
+                "recoCrIOkHUmrt6HN"
+            ],
+            "Short ID": "iOS",
+            "Course": [
+                "recIQcBMuETOKCo84"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": 1.2239583333333333,
+            "Objectives Count": 222
+        },
+        "createdTime": "2018-03-27T17:09:41.000Z"
     },
-    "createdTime": "2018-03-27T17:09:41.000Z"
-  },
-  {
-    "id": "reclFPLU0Myh2528y",
-    "fields": {
-      "Name": "iOS Supplemental Content",
-      "Requires Auth": true,
-      "Average Level": { "specialValue": "NaN" },
-      "Objectives Count": 0
+    {
+        "id": "reclFPLU0Myh2528y",
+        "fields": {
+            "Name": "iOS Supplemental Content",
+            "Requires Auth": true,
+            "Average Level": {
+                "specialValue": "NaN"
+            },
+            "Objectives Count": 0
+        },
+        "createdTime": "2019-07-25T19:46:21.000Z"
     },
-    "createdTime": "2019-07-25T19:46:21.000Z"
-  },
-  {
-    "id": "recneLUBwwQw4xPAs",
-    "fields": {
-      "Name": "Precourse FSW",
-      "Description": "Required work completed before the student begins the Full Stack Web development course.",
-      "Sprints": ["recw0xX1tIMtJAQ3D"],
-      "Short ID": "FSW-PRE",
-      "Course": ["recUjPmBMgGVAwSA2"],
-      "Publish": true,
-      "Average Level": 1.75,
-      "Objectives Count": 22
+    {
+        "id": "recneLUBwwQw4xPAs",
+        "fields": {
+            "Name": "Precourse FSW",
+            "Description": "Required work completed before the student begins the Full Stack Web development course.",
+            "Sprints": [
+                "recw0xX1tIMtJAQ3D"
+            ],
+            "Short ID": "FSW-PRE",
+            "Course": [
+                "recUjPmBMgGVAwSA2"
+            ],
+            "Publish": true,
+            "Average Level": 1.75,
+            "Objectives Count": 22
+        },
+        "createdTime": "2017-11-14T16:57:55.000Z"
     },
-    "createdTime": "2017-11-14T16:57:55.000Z"
-  },
-  {
-    "id": "recniwI3H7rjjHWDI",
-    "fields": {
-      "Name": "Web Applications II",
-      "Sprints": [
-        "recVFiuMBzbcZllxC",
-        "recnhsJGy28gNi1K5",
-        "recukritK1B1pFrcM",
-        "recq59MvEIZfUAohy"
-      ],
-      "Short ID": "WEB3",
-      "Course": ["recUjPmBMgGVAwSA2"],
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": 1.9375,
-      "Objectives Count": 28
+    {
+        "id": "recniwI3H7rjjHWDI",
+        "fields": {
+            "Name": "Web Applications II",
+            "Sprints": [
+                "recVFiuMBzbcZllxC",
+                "recnhsJGy28gNi1K5",
+                "recukritK1B1pFrcM",
+                "recq59MvEIZfUAohy"
+            ],
+            "Short ID": "WEB3",
+            "Course": [
+                "recUjPmBMgGVAwSA2"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": 2.25,
+            "Objectives Count": 28
+        },
+        "createdTime": "2019-07-05T22:00:54.000Z"
     },
-    "createdTime": "2019-07-05T22:00:54.000Z"
-  },
-  {
-    "id": "rectL796yhZTRAnHA",
-    "fields": {
-      "Name": "DS - Predictive Modeling",
-      "Description": "Building predictive models.",
-      "Sprints": [
-        "reclu2nj43hQFPx2p",
-        "recgPpsKlD7tjQxoB",
-        "recJzWlJjoOf8QUIp",
-        "rec8nC7E8EAYFqaRG",
-        "rece0tbcBVl01xfq6",
-        "recwXzAICs5dfcBw1"
-      ],
-      "Short ID": "DS",
-      "Course": ["recGu1k6cJ9d88gKE"],
-      "Requires Auth": true,
-      "Publish": true,
-      "Average Level": 0.5,
-      "Objectives Count": 47
+    {
+        "id": "rectL796yhZTRAnHA",
+        "fields": {
+            "Name": "DS - Predictive Modeling",
+            "Description": "Building predictive models.",
+            "Sprints": [
+                "recJzWlJjoOf8QUIp",
+                "rec8nC7E8EAYFqaRG",
+                "reclu2nj43hQFPx2p",
+                "recgPpsKlD7tjQxoB",
+                "rece0tbcBVl01xfq6",
+                "recwXzAICs5dfcBw1"
+            ],
+            "Short ID": "DS",
+            "Course": [
+                "recGu1k6cJ9d88gKE"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": 0.5,
+            "Objectives Count": 47
+        },
+        "createdTime": "2018-09-24T17:46:08.000Z"
     },
-    "createdTime": "2018-09-24T17:46:08.000Z"
-  },
-  {
-    "id": "rectgEj5YmzshWMry",
-    "fields": {
-      "Name": "Principles for Success",
-      "Description": "Principles for Success is a comprehensive and inclusive program\nwith curriculum pertaining to becoming a well rounded Engineer and\nPerson. Main topics covered in Principles for Success include;\nEmpathy and Diversity, Communication and Professionalism, and\nTips and Tricks on How to Advance your Life and Career. The goal of\nPrinciples for Success is to teach hard and soft skills in order to\nproduce actions and thought processes around optimizing your\npersonal and professional well being.",
-      "Sprints": [
-        "recbEQp4lLrTlEfl4",
-        "rec4w3N3GJlQpcVqu",
-        "recbcxau3VQZpMLtQ"
-      ],
-      "Short ID": "P4S",
-      "Course": ["rec8jqhyCL8yEjdE4"],
-      "Publish": true,
-      "Average Level": 0.3333333333333333,
-      "Objectives Count": 8
+    {
+        "id": "rectgEj5YmzshWMry",
+        "fields": {
+            "Name": "Principles for Success",
+            "Description": "Principles for Success is a comprehensive and inclusive program\nwith curriculum pertaining to becoming a well rounded Engineer and\nPerson. Main topics covered in Principles for Success include;\nEmpathy and Diversity, Communication and Professionalism, and\nTips and Tricks on How to Advance your Life and Career. The goal of\nPrinciples for Success is to teach hard and soft skills in order to\nproduce actions and thought processes around optimizing your\npersonal and professional well being.",
+            "Sprints": [
+                "recbEQp4lLrTlEfl4",
+                "rec4w3N3GJlQpcVqu",
+                "recbcxau3VQZpMLtQ"
+            ],
+            "Short ID": "P4S",
+            "Course": [
+                "rec8jqhyCL8yEjdE4"
+            ],
+            "Publish": true,
+            "Average Level": 0.3333333333333333,
+            "Objectives Count": 8
+        },
+        "createdTime": "2018-08-30T21:13:46.000Z"
     },
-    "createdTime": "2018-08-30T21:13:46.000Z"
-  },
-  {
-    "id": "recvV85PJcBALdsBg",
-    "fields": {
-      "Name": "Full Stack Web Development Core",
-      "Sprints": [
-        "recWkcWui91eG1s8q",
-        "recozTHaHJe6L1ThN",
-        "receFLR7MpwQXesIN",
-        "reckzQd7ZgiFY5ok5",
-        "recVFiuMBzbcZllxC",
-        "recBuB0W7AFWzxtIL",
-        "recRT8JKvbTiGaosk",
-        "recm0bFI7wQ1aVVe4",
-        "recYL2HDPPpkDmGEm",
-        "rec2di8phTBw15e4E",
-        "recPSZMPrmESUYo2C",
-        "recclZwJxMU8kUngT",
-        "recIXiQgpgMdJ81ms",
-        "recfwZvI7QhMa7xbG"
-      ],
-      "Short ID": "FSW",
-      "Requires Auth": true,
-      "Publish": true,
-      "Advisory Council Reviews": [
-        "recwuUNDBuXLHCIvy",
-        "recge37Gkr77hklYC",
-        "recekb7831kRNqsOX",
-        "reclPWaz112lsJq9r",
-        "recxrKs106MbYIwd5",
-        "recYcw7LlyGpavCQ0",
-        "recp1x9vyqITIKAwL",
-        "recYqH5WGIWJiBwPH",
-        "rectUhMyE9E40lTrk",
-        "recZTB7U6BPT3nBbd",
-        "recUNVoIRSVWBa3Yv"
-      ],
-      "Average Level": 2.5714285714285716,
-      "Objectives Count": 145
+    {
+        "id": "recvV85PJcBALdsBg",
+        "fields": {
+            "Name": "Full Stack Web Development Core",
+            "Sprints": [
+                "recWkcWui91eG1s8q",
+                "recozTHaHJe6L1ThN",
+                "receFLR7MpwQXesIN",
+                "reckzQd7ZgiFY5ok5",
+                "recVFiuMBzbcZllxC",
+                "recBuB0W7AFWzxtIL",
+                "recRT8JKvbTiGaosk",
+                "recm0bFI7wQ1aVVe4",
+                "recYL2HDPPpkDmGEm",
+                "rec2di8phTBw15e4E",
+                "recPSZMPrmESUYo2C",
+                "recclZwJxMU8kUngT",
+                "recIXiQgpgMdJ81ms",
+                "recfwZvI7QhMa7xbG"
+            ],
+            "Short ID": "FSW",
+            "Requires Auth": true,
+            "Publish": true,
+            "Advisory Council Reviews": [
+                "recwuUNDBuXLHCIvy",
+                "recge37Gkr77hklYC",
+                "recekb7831kRNqsOX",
+                "reclPWaz112lsJq9r",
+                "recxrKs106MbYIwd5",
+                "recYcw7LlyGpavCQ0",
+                "recp1x9vyqITIKAwL",
+                "recYqH5WGIWJiBwPH",
+                "rectUhMyE9E40lTrk",
+                "recZTB7U6BPT3nBbd",
+                "recUNVoIRSVWBa3Yv"
+            ],
+            "Average Level": 2.5714285714285716,
+            "Objectives Count": 145
+        },
+        "createdTime": "2017-11-14T16:57:55.000Z"
     },
-    "createdTime": "2017-11-14T16:57:55.000Z"
-  },
-  {
-    "id": "recwiOMghayLaKKIj",
-    "fields": {
-      "Name": "UX Design Core [v1 deprecated]",
-      "Description": "We cover fundamental UX design practices, advanced UX practices and practice the practices.",
-      "Sprints": [
-        "recOihlpwJ6MAaCan",
-        "recRT0W3jqNKZK0vR",
-        "recjIntdnw9uWgTCJ",
-        "recGzKZTW3Y8AA9UZ",
-        "rechMnzQo1g6gr29v",
-        "rec4AY5TgYB1INWXS",
-        "recxRwsvyAk923SkG",
-        "recNwj3QEByQAwBB3",
-        "recX493HQq8GMk7OL",
-        "rec76KcKGTmz0eZuh",
-        "recvQldCA8lVkKRx7",
-        "recvnwpEQ3GhlM5sh",
-        "rect2lXo4sTxdkuLQ",
-        "recX14lYNUjS7UZgf",
-        "recHEXSzyeoZ9hGnb"
-      ],
-      "Short ID": "UX-DEPRECATED",
-      "Requires Auth": true,
-      "Average Level": 1.1333333333333333,
-      "Objectives Count": 109
+    {
+        "id": "recwiOMghayLaKKIj",
+        "fields": {
+            "Name": "UX Design Core [v1 deprecated]",
+            "Description": "We cover fundamental UX design practices, advanced UX practices and practice the practices.",
+            "Sprints": [
+                "recOihlpwJ6MAaCan",
+                "recRT0W3jqNKZK0vR",
+                "recjIntdnw9uWgTCJ",
+                "recGzKZTW3Y8AA9UZ",
+                "rechMnzQo1g6gr29v",
+                "rec4AY5TgYB1INWXS",
+                "recxRwsvyAk923SkG",
+                "recNwj3QEByQAwBB3",
+                "recX493HQq8GMk7OL",
+                "rec76KcKGTmz0eZuh",
+                "recvQldCA8lVkKRx7",
+                "recvnwpEQ3GhlM5sh",
+                "rect2lXo4sTxdkuLQ",
+                "recX14lYNUjS7UZgf",
+                "recHEXSzyeoZ9hGnb"
+            ],
+            "Short ID": "UX-DEPRECATED",
+            "Requires Auth": true,
+            "Average Level": 1.1333333333333333,
+            "Objectives Count": 109
+        },
+        "createdTime": "2018-06-29T22:36:19.000Z"
     },
-    "createdTime": "2018-06-29T22:36:19.000Z"
-  },
-  {
-    "id": "recxZPsJ4zlmCbY6x",
-    "fields": {
-      "Name": "Computer Science",
-      "Description": "8 weeks of Computer Science coursework in Python. Students are exposed to common data structures and algorithms, the theory of computation, and other fundamentals of Computer Science.",
-      "Sprints": [
-        "recndTnO1V8oDbBPb",
-        "rec7U9K7OCL5ihj0t",
-        "recAr3gdL8U57eho1",
-        "recR4gHcvD21ziR9a",
-        "recd9grrKlURJ453N",
-        "recd4D4w3QrigPqUF"
-      ],
-      "Short ID": "CS",
-      "Course": ["recUjPmBMgGVAwSA2", "recIQcBMuETOKCo84", "rechUOC9LP4RFzZL3"],
-      "Requires Auth": true,
-      "Publish": true,
-      "Advisory Council Reviews": [
-        "rec1VWs5lnRkJyzZG",
-        "rec12ghvrFWL03bHy",
-        "recf7iwP0JAbBycaR",
-        "recsKh5x4mYJgAkvm",
-        "rectUhMyE9E40lTrk",
-        "rec2scxQdYr28hhGy",
-        "recUNVoIRSVWBa3Yv"
-      ],
-      "Average Level": 1.9583333333333333,
-      "Objectives Count": 37
+    {
+        "id": "recxZPsJ4zlmCbY6x",
+        "fields": {
+            "Name": "Computer Science",
+            "Description": "8 weeks of Computer Science coursework in Python. Students are exposed to common data structures and algorithms, the theory of computation, and other fundamentals of Computer Science.",
+            "Sprints": [
+                "recndTnO1V8oDbBPb",
+                "rec7U9K7OCL5ihj0t",
+                "recAr3gdL8U57eho1",
+                "recR4gHcvD21ziR9a",
+                "recd9grrKlURJ453N",
+                "recd4D4w3QrigPqUF"
+            ],
+            "Short ID": "CS",
+            "Course": [
+                "recUjPmBMgGVAwSA2",
+                "recIQcBMuETOKCo84",
+                "rechUOC9LP4RFzZL3"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Advisory Council Reviews": [
+                "rec1VWs5lnRkJyzZG",
+                "rec12ghvrFWL03bHy",
+                "recf7iwP0JAbBycaR",
+                "recsKh5x4mYJgAkvm",
+                "rectUhMyE9E40lTrk",
+                "rec2scxQdYr28hhGy",
+                "recUNVoIRSVWBa3Yv"
+            ],
+            "Average Level": 1.7916666666666667,
+            "Objectives Count": 37
+        },
+        "createdTime": "2017-11-14T16:57:55.000Z"
     },
-    "createdTime": "2017-11-14T16:57:55.000Z"
-  },
-  {
-    "id": "recz2FoQvo0QPb0AM",
-    "fields": {
-      "Name": "Precourse iOS",
-      "Description": "Required work completed before student begins class the iOS development course.",
-      "Sprints": ["rec2iSWmflrvHlEto"],
-      "Short ID": "iOS-PRE",
-      "Publish": true,
-      "Average Level": 1,
-      "Objectives Count": 52
-    },
-    "createdTime": "2018-04-19T14:44:08.000Z"
-  }
+    {
+        "id": "recz2FoQvo0QPb0AM",
+        "fields": {
+            "Name": "Precourse iOS",
+            "Description": "Required work completed before student begins class the iOS development course.",
+            "Sprints": [
+                "rec2iSWmflrvHlEto"
+            ],
+            "Short ID": "iOS-PRE",
+            "Publish": true,
+            "Average Level": 1,
+            "Objectives Count": 52
+        },
+        "createdTime": "2018-04-19T14:44:08.000Z"
+    }
 ]
