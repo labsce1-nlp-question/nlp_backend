@@ -14,116 +14,113 @@ nlp = spacy.load("en_core_web_sm")
 
 """Generates ./tables json data from Airtable:"""
 def getAirData():
-  print("Start of getAirData--->\n")
-  t0 = time.time()
-  getAir = True
-  if getAir:
-    # Obtain all Modules:
-    response = requests.get(
-      "https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Modules",
-      headers = {"Authorization" : f"Bearer {AIRTABLE_KEY}"},
-    )
+  # print("Start of getAirData--->\n")
+  # t0 = time.time()
+  # Obtain all Modules:
+  response = requests.get(
+    "https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Modules",
+    headers = {"Authorization" : f"Bearer {AIRTABLE_KEY}"},
+  )
 
-    if response:
-      m = response.json()
-      modules = m["records"]
+  if response:
+    m = response.json()
+    modules = m["records"]
 
-      while "offset" in m:
-        offset = m["offset"]
-        response = requests.get(
-          f"https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Modules?offset={offset}",
-          headers = {"Authorization" : f"Bearer {AIRTABLE_KEY}"},
-        )
-        if response:
-          m = response.json()
-          for module in m["records"]:
-            modules.append(module)
-        else:
-          print("Error getting offset")
-    else:
-      print("Error getting modules")
-    
-    # Make modules.json
-    with open("./tables/modules.json", "w") as f:
-      json.dump(modules, f)
-
-    # Obtain all Objectives:
-    response = requests.get(
-      "https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Objectives",
-      headers = {"Authorization" : f"Bearer {AIRTABLE_KEY}"},
-    )
-
-    if response:
-      o = response.json()
-      objectives = o["records"]
-
-      while "offset" in o:
-        offset = o["offset"]
-        response = requests.get(
-          f"https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Objectives?offset={offset}",
-          headers = {"Authorization" : f"Bearer {AIRTABLE_KEY}"},
-        )
-        if response:
-          o = response.json()
-          for obj in o["records"]:
-            objectives.append(obj)
-        else:
-          print("Error getting offset")
-    else:
-      print("Error getting objectives")
-    
-    # Make objectives.json
-    with open("./tables/objectives.json", "w") as f:
-      json.dump(objectives, f)
-    
-    # Obtain all Currriculum Sets:
-    response = requests.get("https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Curriculum%20Sets",
-      headers = {"Authorization" : f"Bearer {AIRTABLE_KEY}"},
-    )
-
-    if response:
-      c = response.json()
-      curriculumSets = c["records"]
-
-      while "offset" in c:
-        offset = c["offset"]
-        response = requests.get(
-          f"https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Curriculum%20Sets?offset={offset}",
-          headers = {"Authorization" : f"Bearer {AIRTABLE_KEY}"},
-        )
-        if response:
-          c = response.json()
-          for curriculumSet in c["records"]:
-            curriculumSets.append(curr)
-        else:
-          print("Error getting offset", response.text)
-    else:
-      print("Error getting Curriculum Sets", response.text)
-    
-    # Make curriculumSets.json
-    with open("./tables/curriculumSets.json", "w") as f:
-      json.dump(curriculumSets, f)
-
-    getRecord = {}
-    for module in modules:
-      getRecord[module["id"]] = module
-    for objective in objectives:
-      getRecord[objective["id"]] = objective
-    for curriculumSet in curriculumSets:
-      getRecord[curriculumSet["id"]] = curriculumSet
-
-    with open("./tables/getRecord.json", "w") as f:
-      json.dump(getRecord, f)
+    while "offset" in m:
+      offset = m["offset"]
+      response = requests.get(
+        f"https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Modules?offset={offset}",
+        headers = {"Authorization" : f"Bearer {AIRTABLE_KEY}"},
+      )
+      if response:
+        m = response.json()
+        for module in m["records"]:
+          modules.append(module)
+      else:
+        print("Error getting offset")
   else:
-    return
+    print("Error getting modules")
+  
+  # Make modules.json
+  with open("./tables/modules.json", "w") as f:
+    json.dump(modules, f, indent=4)
 
-  speed = time.time() - t0
-  print(f"\nSpeed: {speed}")
-  print("\n<---End of getAirData")
+  # Obtain all Objectives:
+  response = requests.get(
+    "https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Objectives",
+    headers = {"Authorization" : f"Bearer {AIRTABLE_KEY}"},
+  )
 
+  if response:
+    o = response.json()
+    objectives = o["records"]
+
+    while "offset" in o:
+      offset = o["offset"]
+      response = requests.get(
+        f"https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Objectives?offset={offset}",
+        headers = {"Authorization" : f"Bearer {AIRTABLE_KEY}"},
+      )
+      if response:
+        o = response.json()
+        for obj in o["records"]:
+          objectives.append(obj)
+      else:
+        print("Error getting offset")
+  else:
+    print("Error getting objectives")
+  
+  # Make objectives.json
+  with open("./tables/objectives.json", "w") as f:
+    json.dump(objectives, f, indent=4)
+  
+  # Obtain all Currriculum Sets:
+  response = requests.get("https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Curriculum%20Sets",
+    headers = {"Authorization" : f"Bearer {AIRTABLE_KEY}"},
+  )
+
+  if response:
+    c = response.json()
+    curriculumSets = c["records"]
+
+    while "offset" in c:
+      offset = c["offset"]
+      response = requests.get(
+        f"https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Curriculum%20Sets?offset={offset}",
+        headers = {"Authorization" : f"Bearer {AIRTABLE_KEY}"},
+      )
+      if response:
+        c = response.json()
+        for curriculumSet in c["records"]:
+          curriculumSets.append(curr)
+      else:
+        print("Error getting offset", response.text)
+  else:
+    print("Error getting Curriculum Sets", response.text)
+  
+  # Make curriculumSets.json
+  with open("./tables/curriculumSets.json", "w") as f:
+    json.dump(curriculumSets, f, indent=4)
+
+  getRecord = {}
+  for module in modules:
+    getRecord[module["id"]] = module
+  for objective in objectives:
+    getRecord[objective["id"]] = objective
+  for curriculumSet in curriculumSets:
+    getRecord[curriculumSet["id"]] = curriculumSet
+
+  with open("./tables/getRecord.json", "w") as f:
+    json.dump(getRecord, f, indent=4)
+  
+  # speed = time.time() - t0
+  # print(f"\nSpeed: {speed}")
+  # print("\n<---End of getAirData")
+
+"""Generates modSearchData.json"""
 def genModSearchData():
-  print("Start of genModSearchData--->\n")
-  t0 = time.time()
+  # print("Start of genModSearchData--->\n")
+  # t0 = time.time()
   modSearchData = []
 
   # Loads jsons from ./tables
@@ -225,14 +222,11 @@ def genModSearchData():
       modSearchData.append(newEntry)
   
   with open("./modSearchData.json", "w") as f:
-    json.dump(modSearchData, f)
+    json.dump(modSearchData, f, indent=4)
   
-  speed = time.time() - t0
-  print(f"modSearchData length: {len(modSearchData)} \nSpeed: {speed}")
-  print("\n<---End of genModSearchData")
-
-# getAirData()
-# genModSearchData()
+  # speed = time.time() - t0
+  # print(f"modSearchData length: {len(modSearchData)} \nSpeed: {speed}")
+  # print("\n<---End of genModSearchData")
 
 class QA:
   def on_get(self, req, resp):
@@ -253,7 +247,7 @@ class QA:
     doc = [(w.text,w.pos_) for w in question]
     # print(f"Question: {question}\nNLP Doc: {doc}")
 
-    # qwords = a list of key words asked in the question (doc)
+    # qwords is a list of key words asked in the question (doc)
     qwords = []
     for w in doc:
       if w[1] != 'DET' and w[1] != 'VERB' and w[1] != 'PRON' and w[1] != 'PART' and w[1] != 'ADV' and w[1] != 'ADP' and w[1] != 'PUNCT':
@@ -294,8 +288,33 @@ class QA:
     matches.sort(key=lambda x: x["score"], reverse=True)
     resp.media = matches
 
+class UpdateQA:
+  def on_post(self, req, resp):
+    updates = req.media
+    # print(f"Updates : {updates}")
+
+    # Example:
+    # This updates object triggers the creation/update of modSearchData
+    # updates = {
+    #   "airTable": 0,
+    #   "modSearchData": 1
+    # }
+    # updates is an object with keys of the update to make and a value of 1 in order to update and a value of of 0 to not
+
+    if updates["airData"]:
+      getAirData()
+      resp.media = { "message": "Success updating airData"}
+    if updates["modSearchData"]:
+      genModSearchData()
+      resp.media = { "message": "Success updating modSearchData"}
+    
+
+
+
+
 api = falcon.API()
 api.add_route('/qa', QA())
+api.add_route('/update', UpdateQA())
 
 # loadTime = time.time() - finalT0
 # print(f"<---QA Ready---> \nLoad Time: {loadTime}")
