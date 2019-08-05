@@ -257,10 +257,10 @@
                 "recyBiyDO8Ircle01"
             ],
             "Objectives": [
-                "recL4zfScqPH70GBy",
-                "recWzcezHZPJeuvvZ",
+                "recRNEPKsgJinrW6n",
                 "reckzA5jN7zO4IqFP",
-                "recRNEPKsgJinrW6n"
+                "recWzcezHZPJeuvvZ",
+                "recL4zfScqPH70GBy"
             ],
             "Sprints": [
                 "recZdExe2c5Fx0V4W"
@@ -982,7 +982,8 @@
                 "recPEGsptroTpNXA8"
             ],
             "Instruction Videos": [
-                "recXa06nDoPJi9TTW"
+                "recXa06nDoPJi9TTW",
+                "rec4CmjW4B576Ulyw"
             ],
             "Curriculum Sets": [
                 "rec1V29UWjK8OGyih"
@@ -1342,6 +1343,35 @@
             "RecordID": "rec38QiQkNMZgQa4l"
         },
         "createdTime": "2018-11-26T20:58:21.000Z"
+    },
+    {
+        "id": "rec39B4aHv4LRSGUR",
+        "fields": {
+            "Name": "Android App Structure",
+            "Instructor Notes": "Version 2",
+            "Objectives": [
+                "recdeISBvFQvKHNKy",
+                "recAWce4ZBg4vonbq",
+                "recXDZx0Qw4amFL3R"
+            ],
+            "Sprints": [
+                "recPEGsptroTpNXA8"
+            ],
+            "Status": "Active",
+            "Curriculum Sets": [
+                "rec1V29UWjK8OGyih"
+            ],
+            "Objective Count": 3,
+            "Level 1 Check": 1,
+            "Objective Level 2 Count": 0,
+            "Projected Level": 1,
+            "Objective Level 3 Count": 0,
+            "Objective Level 4 Count": 0,
+            "Created time": "2019-08-05T15:18:38.000Z",
+            "Objectives count": 3,
+            "RecordID": "rec39B4aHv4LRSGUR"
+        },
+        "createdTime": "2019-08-05T15:18:38.000Z"
     },
     {
         "id": "rec3E1WYDyoiEF1e3",
@@ -4182,7 +4212,8 @@
                 "recGeEgADBOXIZGy0",
                 "recvigl0gk7QbHjsa",
                 "reczDcOorFoShYJqH",
-                "recJCwufSrVZOWGNG"
+                "recJCwufSrVZOWGNG",
+                "recYbOKPpUq3grxHB"
             ],
             "Curriculum Sets": [
                 "recZDELh3GRKrHcBA"
@@ -7340,6 +7371,34 @@
         "createdTime": "2019-07-06T01:19:36.000Z"
     },
     {
+        "id": "recInETUYKRhtagFe",
+        "fields": {
+            "Name": "Meterial Design Basics",
+            "Objectives": [
+                "rec5nSSRZYIU5dUMU",
+                "reci17bMWjrYqyggv",
+                "recMSi2NzB2tDx10W",
+                "rec1BYaaOkWlbTxyW"
+            ],
+            "Sprints": [
+                "recfWySNFDHdwr7Mh"
+            ],
+            "Curriculum Sets": [
+                "rec1V29UWjK8OGyih"
+            ],
+            "Objective Count": 4,
+            "Level 1 Check": 1,
+            "Objective Level 2 Count": 0,
+            "Projected Level": 1,
+            "Objective Level 3 Count": 0,
+            "Objective Level 4 Count": 0,
+            "Created time": "2019-08-05T15:20:58.000Z",
+            "Objectives count": 4,
+            "RecordID": "recInETUYKRhtagFe"
+        },
+        "createdTime": "2019-08-05T15:20:58.000Z"
+    },
+    {
         "id": "recIrF189uI5U8cu0",
         "fields": {
             "Name": "Operating Systems",
@@ -7536,6 +7595,9 @@
             "Name": "Regression & Classification Module 1",
             "Sprints": [
                 "recwXzAICs5dfcBw1"
+            ],
+            "Instruction Videos": [
+                "recCuF9SOnl4FfAEs"
             ],
             "Curriculum Sets": [
                 "rectL796yhZTRAnHA"
@@ -11040,7 +11102,8 @@
                 "recqidLwS7wDOQTv8"
             ],
             "Instruction Videos": [
-                "rec1E5PR3XyfY9nhx"
+                "rec1E5PR3XyfY9nhx",
+                "recTvsDJJMXn11uxj"
             ],
             "Description": "Even the most complex web applications start with simple HTML elements. Knowing how to use HTML will let you build the foundation for web experiences.",
             "Curriculum Sets": [
@@ -11664,7 +11727,8 @@
                 "rechMnzQo1g6gr29v"
             ],
             "Instruction Videos": [
-                "recbPjWOem4xvzzpX"
+                "recbPjWOem4xvzzpX",
+                "recw8jUgwiE9YIlZ4"
             ],
             "Description": "The first day of the Google Design Sprint 2.0 consists of two parts. The first part, conducted in the morning, is the process of defining the design challenge. The second part of the day is used as ideation time, using specific design techniques for coming up with a number of possible solutions for the defined challenge. ",
             "Curriculum Sets": [
@@ -12825,7 +12889,8 @@
             "Instruction Videos": [
                 "recY4Pop1IVMnDKuR",
                 "rec3CvWR8uP5Nikxv",
-                "recJJWaokLBDZWMVH"
+                "recJJWaokLBDZWMVH",
+                "recu9TImRXuENoJzb"
             ],
             "Description": "On this lecture we will:\n\n- introduce `node.js` and `Express`.\n  - what is `node.js`, what can it do? what can't it do?\n  - what is `Express`? why use it?\n  - relationship between `Express` and `node.js`.\n- see a high level overview of the main features of `Express`.\n- learn how to manually test our Web API using a tool called `Postman`.services.\n- create our first CRUD Web API.",
             "Curriculum Sets": [
@@ -13241,7 +13306,8 @@
                 "recOXVXfpkF3D7ny3",
                 "rec6dkTFTsMrkguuv",
                 "receJ58rHE7yUXsxf",
-                "recvID0pPWfc17vjZ"
+                "recvID0pPWfc17vjZ",
+                "recekhUiW5NU0pVup"
             ],
             "Description": "Learning new languages is not an uncommon task in the world of software development, and Python is a popular language in the field. This module will introduce students to Python basics, and use those to implement a simple project.",
             "Curriculum Sets": [
@@ -13561,9 +13627,6 @@
                 "reclLxLoRiHXSPG85",
                 "recHBtcduAiUr2kn3"
             ],
-            "Sprints": [
-                "recfWySNFDHdwr7Mh"
-            ],
             "Instruction Videos": [
                 "rec90qaVDfma2HHAf",
                 "recWeOLJ8lH2Pq4QO"
@@ -13572,9 +13635,6 @@
                 "recoaR69w2xey20QJ"
             ],
             "Description": "This module begins showing students how to add basic persistence to their apps.",
-            "Curriculum Sets": [
-                "rec1V29UWjK8OGyih"
-            ],
             "Objective Count": 6,
             "Level 1 Check": 1,
             "Objective Level 2 Count": 0,
@@ -17236,7 +17296,8 @@
                 "recJvVJxHMuxpqku9",
                 "recmpfzKwPeSXiCtR",
                 "recDfGUiEcMteIfZi",
-                "recot2877Stb4sXt3"
+                "recot2877Stb4sXt3",
+                "rec4XlNBw0BkSfvPd"
             ],
             "Description": "Even the most complex web applications start with simple HTML elements.  Knowing how to use HTML and style it with CSS has a massive impact for your future as a developer.  This module will explore the fundamentals of HTML and CSS.",
             "Curriculum Sets": [
@@ -17914,6 +17975,7 @@
                 "reclnndnLWIB9n8xS"
             ],
             "Objectives": [
+                "recsWkbTFaDaUIUtQ",
                 "recXp4HDg0dwuCuML",
                 "rechsCdZ0pJxEmp24"
             ],
@@ -17932,20 +17994,21 @@
                 "recq5p3YhUJwgNoDo",
                 "recIXp6FzpIkii4ZT",
                 "recNBxO1rVPlkbSVS",
-                "rectMBVScEPg18djH"
+                "rectMBVScEPg18djH",
+                "recTKVeYJPzZmGqhK"
             ],
             "Description": "Today we will learn all about `classes` in React. We will use classes to build out our components. Class Components are a big part of the React ecosystem because they bring a lot of functionality that we normally don't get with the React API when using Functional Components. Learning to use Class components is a fundamental part of learning to work with ReactJS and it's API.",
             "Curriculum Sets": [
                 "recniwI3H7rjjHWDI"
             ],
-            "Objective Count": 2,
+            "Objective Count": 3,
             "Level 1 Check": 1,
-            "Objective Level 2 Count": 2,
+            "Objective Level 2 Count": 3,
             "Projected Level": 4,
-            "Objective Level 3 Count": 2,
-            "Objective Level 4 Count": 2,
+            "Objective Level 3 Count": 3,
+            "Objective Level 4 Count": 3,
             "Created time": "2017-11-29T00:34:35.000Z",
-            "Objectives count": 2,
+            "Objectives count": 3,
             "RecordID": "recnDKrWb24lgaziC"
         },
         "createdTime": "2017-11-29T00:34:35.000Z"
@@ -18788,15 +18851,9 @@
                 "recKT8Os9xTj9ulNe",
                 "recofQDCvYbkAANqu"
             ],
-            "Sprints": [
-                "recPEGsptroTpNXA8"
-            ],
             "Instruction Videos": [
                 "recjS15Y5yf8rYLu0",
                 "reckqbEdmTknPvnpc"
-            ],
-            "Curriculum Sets": [
-                "rec1V29UWjK8OGyih"
             ],
             "Objective Count": 5,
             "Level 1 Check": 1,
@@ -19247,7 +19304,8 @@
             ],
             "Instruction Videos": [
                 "recOL7sNavZiNjJFM",
-                "rec4yB3rziaJXb9DJ"
+                "rec4yB3rziaJXb9DJ",
+                "rec56MysugSsxuq2e"
             ],
             "Description": "When you're a software engineer, you're not just writing code for your own immediate needs - you're building a system that others will work on, from coworkers and open-source collaborators to future-you. To do this, we must write code based on shared principles of design and style.\n\nIn this module we will learn the basic principles of object-oriented programming, the most common paradigm for the design and building of large codebases. We will also learn about standard code style and tooling, and the code review process.",
             "Curriculum Sets": [
@@ -20278,14 +20336,8 @@
                 "recRnCVVeojeMOzvc",
                 "recSYWHC33QNyKCY8"
             ],
-            "Sprints": [
-                "recfWySNFDHdwr7Mh"
-            ],
             "Instruction Videos": [
                 "recmGanfzLjd9WuSf"
-            ],
-            "Curriculum Sets": [
-                "rec1V29UWjK8OGyih"
             ],
             "Objective Count": 6,
             "Level 1 Check": 1,
@@ -20466,7 +20518,8 @@
                 "recarZvsnsHAr3nGa",
                 "recYuonvh5q7GVrkg",
                 "recljLZiWtsg2DQY1",
-                "recId0W6toaxNe8M0"
+                "recId0W6toaxNe8M0",
+                "recOl2fbt7yTxbM1v"
             ],
             "Description": "Now that we can build a basic static web page with HTML and CSS, we need to add functionality to the page. The first step in building vibrant dynamic web pages and applications is learning about the DOM. What it is, how it affects our page, and how to access and manipulate it. DOM manipulation is at the core of every framework and before we start using frameworks we need to understand the DOM. ",
             "Curriculum Sets": [
@@ -21749,7 +21802,8 @@
             "Instruction Videos": [
                 "recEeoldsiPCbqgLR",
                 "recmaEINIPOg6zpAB",
-                "rec3xCRVSG13GTGpL"
+                "rec3xCRVSG13GTGpL",
+                "rec8LsqtDuvEXPUsT"
             ],
             "Description": "Python Notebooks are a glorified REPL - read-eval-print loop. What if you want code that should live on and be reused in a variety of circumstances? Enter modules, packages, and environments!",
             "Curriculum Sets": [
@@ -22086,6 +22140,35 @@
             "RecordID": "recwrN1kwYw0PnwHy"
         },
         "createdTime": "2018-04-23T17:05:34.000Z"
+    },
+    {
+        "id": "recx262g9O07JBqVn",
+        "fields": {
+            "Name": "Android UI Fundamentals",
+            "Objectives": [
+                "recV4zyBOdYBUEv79",
+                "recbThgLgxJ2fEymy",
+                "rect7T3hVqvyZH1HE",
+                "recIXKr1W2Obk9kTF",
+                "rec5KRiBUciPqTe0I"
+            ],
+            "Sprints": [
+                "recfWySNFDHdwr7Mh"
+            ],
+            "Curriculum Sets": [
+                "rec1V29UWjK8OGyih"
+            ],
+            "Objective Count": 5,
+            "Level 1 Check": 1,
+            "Objective Level 2 Count": 0,
+            "Projected Level": 1,
+            "Objective Level 3 Count": 0,
+            "Objective Level 4 Count": 0,
+            "Created time": "2019-08-05T15:20:44.000Z",
+            "Objectives count": 5,
+            "RecordID": "recx262g9O07JBqVn"
+        },
+        "createdTime": "2019-08-05T15:20:44.000Z"
     },
     {
         "id": "recx4OSX1JIwT1h2S",

@@ -1,1 +1,1 @@
-web: gunicorn --timeout 300 qa_api:api
+web: gunicorn --timeout 420 qa_api:api
