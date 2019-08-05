@@ -259,11 +259,11 @@ class QA:
     # Resets question to be an array of keywords within original question:
     question = []
     for w in doc:
-      if w[1] != 'DET' and w[1] != 'VERB' and w[1] != 'PRON' and w[1] != 'PART' and w[1] != 'ADV' and w[1] != 'ADP' and w[1] != 'PUNCT':
+      if w[1] != 'DET' and w[1] and w[1] != 'CCONJ' and w[1] != 'VERB' and w[1] != 'PRON' and w[1] != 'PART' and w[1] != 'ADV' and w[1] != 'ADP' and w[1] != 'PUNCT':
         question.append(w[0])
       elif w[1] == 'PUNCT' and len(w[0]) != 1:
         question.append(w[0])
-      elif w[0] in modSearchKeywords:
+      elif w[0] in modSearchKeywords and w[1] != 'CCONJ' and w[1] != 'PART' and w[1] != 'ADP' and w[1] != 'ADV' and w[1] != 'DET':
         question.append(w[0])
 
     # print(f"Parsed Question: {question}") 
