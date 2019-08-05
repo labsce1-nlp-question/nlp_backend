@@ -254,19 +254,19 @@ class QA:
 
     question = nlp(req.media["question"].lower())
     doc = [(w.text,w.pos_) for w in question]
-    # print(f"Question: {question}\nNLP Doc: {doc}")
+    print(f"Question: {question}\nNLP Doc: {doc}")
 
     # Resets question to be an array of keywords within original question:
     question = []
     for w in doc:
-      if w[1] != 'DET' and w[1] != 'VERB' and w[1] != 'PRON' and w[1] != 'PART' and w[1] != 'ADV' and w[1] != 'ADP' and w[1] != 'PUNCT':
+      if w[1] != 'DET' and w[1] and w[1] != 'CCONJ' and w[1] != 'VERB' and w[1] != 'PRON' and w[1] != 'PART' and w[1] != 'ADV' and w[1] != 'ADP' and w[1] != 'PUNCT':
         question.append(w[0])
       elif w[1] == 'PUNCT' and len(w[0]) != 1:
         question.append(w[0])
-      elif w[0] in modSearchKeywords:
+      elif w[0] in modSearchKeywords and w[1] != 'CCONJ' and w[1] != 'PART' and w[1] != 'ADP' and w[1] != 'ADV' and w[1] != 'DET':
         question.append(w[0])
 
-    # print(f"Parsed Question: {question}") 
+    print(f"Parsed Question: {question}") 
     matches = []
     for module in modSearchData:
       newMatch = {
