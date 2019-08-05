@@ -254,7 +254,7 @@ class QA:
 
     question = nlp(req.media["question"].lower())
     doc = [(w.text,w.pos_) for w in question]
-    print(f"Question: {question}\nNLP Doc: {doc}")
+    # print(f"Question: {question}\nNLP Doc: {doc}")
 
     # Resets question to be an array of keywords within original question:
     question = []
@@ -266,7 +266,7 @@ class QA:
       elif w[0] in modSearchKeywords and w[1] != 'CCONJ' and w[1] != 'PART' and w[1] != 'ADP' and w[1] != 'ADV' and w[1] != 'DET':
         question.append(w[0])
 
-    print(f"Parsed Question: {question}") 
+    # print(f"Parsed Question: {question}") 
     matches = []
     for module in modSearchData:
       newMatch = {
