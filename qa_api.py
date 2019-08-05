@@ -114,7 +114,7 @@ def getAirData():
     json.dump(getRecord, f, indent=4)
   
   # speed = time.time() - t0
-  # print(f"\nSpeed: {speed}")
+  # print(f"Speed: {speed}")
   # print("\n<---End of getAirData")
 
 """Generates modSearchData.json"""
@@ -122,6 +122,7 @@ def genModSearchData():
   # print("Start of genModSearchData--->\n")
   # t0 = time.time()
   modSearchData = []
+  modSearchKeywords = {}
 
   # Loads jsons from ./tables
   with open ('./tables/modules.json', 'r') as modules:
@@ -219,13 +220,18 @@ def genModSearchData():
       modSearchProfile["text"] = text
       modSearchProfile["textFreq"]= getFreq(text)
       newEntry["modSearchProfile"] = modSearchProfile
+      for word in moduleFields["Name"].lower().split():
+        if word not in modSearchKeywords:
+          modSearchKeywords[word] = True
       modSearchData.append(newEntry)
   
   with open("./modSearchData.json", "w") as f:
     json.dump(modSearchData, f, indent=4)
-  
+  with open("./modSearchKeywords.json", "w") as f:
+    json.dump(modSearchKeywords, f, indent=4)
+
   # speed = time.time() - t0
-  # print(f"modSearchData length: {len(modSearchData)} \nSpeed: {speed}")
+  # print(f"modSearchData length: {len(modSearchData)}\nmodSearchKeywords length: {len(modSearchKeywords)}\nSpeed: {speed}")
   # print("\n<---End of genModSearchData")
 
 class QA:
@@ -240,21 +246,27 @@ class QA:
       
   def on_post(self, req, resp):
     """Handles POST requests"""
+    # print("Start of QA POST--->")
     with open("./modSearchData.json", "r") as modSearchData:
       modSearchData = json.load(modSearchData)
+    with open("./modSearchKeywords.json", "r") as modSearchKeywords:
+      modSearchKeywords = json.load(modSearchKeywords)
 
     question = nlp(req.media["question"].lower())
     doc = [(w.text,w.pos_) for w in question]
     # print(f"Question: {question}\nNLP Doc: {doc}")
 
-    # qwords is a list of key words asked in the question (doc)
-    qwords = []
+    # Resets question to be an array of keywords within original question:
+    question = []
     for w in doc:
       if w[1] != 'DET' and w[1] != 'VERB' and w[1] != 'PRON' and w[1] != 'PART' and w[1] != 'ADV' and w[1] != 'ADP' and w[1] != 'PUNCT':
-        qwords.append(w[0])
-      if w[1] == 'PUNCT' and len(w[0]) != 1:
-        qwords.append(w[0])
-    
+        question.append(w[0])
+      elif w[1] == 'PUNCT' and len(w[0]) != 1:
+        question.append(w[0])
+      elif w[0] in modSearchKeywords:
+        question.append(w[0])
+
+    # print(f"Parsed Question: {question}") 
     matches = []
     for module in modSearchData:
       newMatch = {
@@ -266,17 +278,13 @@ class QA:
         "textMatch": [],
         "score": 0
       }
-
       modSearchProfile = module["modSearchProfile"]
 
-      if modSearchProfile["text"] == "NO_TEXT":
-        return
-      else:  
-        for w in qwords:
-          if w in newMatch["name"]: 
-            newMatch["nameMatch"].append((w,2))
-          if w in modSearchProfile["textFreq"]:
-            newMatch["textMatch"].append((w, modSearchProfile["textFreq"][w]))
+      for w in question:
+        if w in newMatch["name"]: 
+          newMatch["nameMatch"].append((w,2))
+        if w in modSearchProfile["textFreq"]:
+          newMatch["textMatch"].append((w, modSearchProfile["textFreq"][w]))
 
       if newMatch["score"] == 0 and (newMatch["nameMatch"] != [] or newMatch["textMatch"] != []):
         for nScore in newMatch["nameMatch"]:
@@ -319,6 +327,6 @@ api.add_route('/update', UpdateQA())
 # loadTime = time.time() - finalT0
 # print(f"<---QA Ready---> \nLoad Time: {loadTime}")
 
-# To run server cd into `./nlp_backend` and run this command in terminal: `gunicorn --reload --timeout 300 -b 0.0.0.0:8000 qa_api:api`
+# To run server cd into `./nlp_backend` and run this command in terminal: `gunicorn --reload --timeout 420 -b 0.0.0.0:8000 qa_api:api`
 # you may then make calls to: `localhost:8000/qa`
 # POST request expects to recieve json = {'question': 'your question'} and returns an array of matches

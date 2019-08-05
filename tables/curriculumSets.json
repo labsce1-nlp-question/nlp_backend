@@ -51,9 +51,9 @@
                 "recBcK7imVGRTAsYL",
                 "reccwvscsZ3C0Y3IF",
                 "recYWe2J9r9x16kU4",
+                "recQmODccUXTnI52v",
                 "rec1rdWLm0i4ZZVcw",
                 "recmMArwYcvcbuQqD",
-                "recQmODccUXTnI52v",
                 "recfWySNFDHdwr7Mh",
                 "recPEGsptroTpNXA8"
             ],
@@ -62,8 +62,9 @@
                 "rechUOC9LP4RFzZL3"
             ],
             "Requires Auth": true,
+            "Publish": true,
             "Average Level": 0.8,
-            "Objectives Count": 233
+            "Objectives Count": 228
         },
         "createdTime": "2018-07-02T20:39:42.000Z"
     },
@@ -704,7 +705,7 @@
             "Requires Auth": true,
             "Publish": true,
             "Average Level": 2.25,
-            "Objectives Count": 28
+            "Objectives Count": 29
         },
         "createdTime": "2019-07-05T22:00:54.000Z"
     },
