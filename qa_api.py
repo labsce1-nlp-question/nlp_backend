@@ -281,7 +281,7 @@ class QA:
       modSearchProfile = module["modSearchProfile"]
 
       for w in question:
-        if w in newMatch["name"]: 
+        if w in newMatch["name"].lower(): 
           newMatch["nameMatch"].append((w,2))
         if w in modSearchProfile["textFreq"]:
           newMatch["textMatch"].append((w, modSearchProfile["textFreq"][w]))
