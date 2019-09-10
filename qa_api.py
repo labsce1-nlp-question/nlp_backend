@@ -1,5 +1,5 @@
 # To run server cd into `./nlp_backend` and run this command in terminal:
-# `gunicorn --reload --timeout 420 -b 0.0.0.0:8000 qa_api:api`
+# `gunicorn --reload --timeout 600 -b 0.0.0.0:8000 qa_api:api`
 # you may then make calls to: `localhost:8000/qa`
 # POST request expects to recieve json = {'question': 'your question'}
 # and returns an array of matches
@@ -374,12 +374,12 @@ class UpdateQA:
         updates = req.media
 
         if DEBUG_MODE == "ON":
-            print("Updates : "+updates)
+            print("Updates : ", updates)
 
             # Example:
             # This updates object triggers the creation/update of modSearchData
             # updates = {
-            #   "airTable": 0,
+            #   "airData": 0,
             #   "modSearchData": 1
             # }
             # updates is an object with keys of the update to make and

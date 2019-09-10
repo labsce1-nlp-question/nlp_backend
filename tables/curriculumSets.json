@@ -14,12 +14,11 @@
                 "recGzKZTW3Y8AA9UZ",
                 "rechMnzQo1g6gr29v",
                 "rechmG7z5ikRqoWOH",
-                "rec9GvqRZGoelFcGT",
-                "recNrHFznMIbs01ZE",
+                "recs2GSghbU32IUC0",
+                "rec9YW9QEEAoHulew",
+                "recZU12jrbThfdRV7",
+                "recFpM2HK57wGysqF",
                 "rec3UNewTTB20mV6v",
-                "recDhkxAxMHglFnBa",
-                "recMiazRfkTJYcLN5",
-                "recBuxg8uzDK5vFG4",
                 "recdiFDBPeSje4tzL"
             ],
             "Short ID": "UX",
@@ -28,10 +27,8 @@
             ],
             "Requires Auth": true,
             "Publish": true,
-            "Average Level": {
-                "specialValue": "NaN"
-            },
-            "Objectives Count": 127
+            "Average Level": 0.9166666666666666,
+            "Objectives Count": 114
         },
         "createdTime": "2019-01-02T16:04:11.000Z"
     },
@@ -64,34 +61,27 @@
             "Requires Auth": true,
             "Publish": true,
             "Average Level": 0.8,
-            "Objectives Count": 228
+            "Objectives Count": 229
         },
         "createdTime": "2018-07-02T20:39:42.000Z"
     },
     {
         "id": "rec1nzBWYJsCUWmaa",
         "fields": {
-            "Name": "Lambda Labs",
-            "Description": "Lambda Labs is our immersive capstone experience. Students are assigned to small teams and tasked to turn a project specification into a functional product that accepts paying customers. \n\nEach team receives a Trello board full of tasks they will complete and a wireframe detailing the presentation and functionality of the app. This experience will look and feel like a job at a real-world dev shop. \n\nStudents start each class with a stand-up meeting, led by their PM, where they coordinate and collaborate with their colleagues.   Over the course of Labs, they will complete sprint objectives, participate in code reviews and pair programming, and meet with their client to share progress. \n\nThe Labs experience culminates with a professional code review and a demonstration of the team's application in front of the rest of the school.",
+            "Name": "Onboarding",
+            "Description": "Onboarding",
             "Sprints": [
-                "rec0dFYFDBfPWZclR",
-                "rechzyZDlGMxI9ApR",
-                "rec33mGVnhCZFVYWa",
-                "recs22te7oY64llAl",
-                "recUHb6DrRIIYiDwr",
-                "recUmTvKqRFGMX228"
+                "recxeXCu6c9fvcYlQ",
+                "recUHb6DrRIIYiDwr"
             ],
-            "Short ID": "LABS",
+            "Short ID": "LABS-1",
             "Course": [
-                "recIQcBMuETOKCo84",
-                "recUjPmBMgGVAwSA2",
-                "rechUOC9LP4RFzZL3",
-                "recGu1k6cJ9d88gKE",
-                "recANqTRKQLtriKsJ"
+                "rec68wUUoAfauQZyu"
             ],
             "Requires Auth": true,
-            "Average Level": 1.2083333333333333,
-            "Objectives Count": 29
+            "Publish": true,
+            "Average Level": 0,
+            "Objectives Count": 1
         },
         "createdTime": "2018-04-19T14:43:54.000Z"
     },
@@ -137,7 +127,7 @@
             "Requires Auth": true,
             "Publish": true,
             "Average Level": 1.4,
-            "Objectives Count": 24
+            "Objectives Count": 23
         },
         "createdTime": "2019-01-23T22:53:29.000Z"
     },
@@ -153,13 +143,12 @@
                 "reczMSFEG5pffpADx",
                 "recm4nrk0VPEMz8w8",
                 "recTTpwFpgZXtPG2o",
-                "recQ277OLX2zZXPKd",
-                "recTXsleEkanZP75b"
+                "recqkHjNcXzK5DTqd"
             ],
             "Short ID": "CS-ANNEX",
             "Requires Auth": true,
-            "Average Level": 1.7083333333333335,
-            "Objectives Count": 30
+            "Average Level": 1.1972789115646258,
+            "Objectives Count": 36
         },
         "createdTime": "2019-01-30T17:13:32.000Z"
     },
@@ -172,8 +161,8 @@
                 "recd4D4w3QrigPqUF"
             ],
             "Short ID": "CSLegacy",
-            "Average Level": 2.25,
-            "Objectives Count": 15
+            "Average Level": 3,
+            "Objectives Count": 14
         },
         "createdTime": "2019-07-06T18:01:53.000Z"
     },
@@ -193,6 +182,28 @@
         "createdTime": "2018-06-29T22:36:32.000Z"
     },
     {
+        "id": "recEpRVCkKjuWcjHG",
+        "fields": {
+            "Name": "Lambda Launch",
+            "Description": "Orientation material for every Lambda student.",
+            "Sprints": [
+                "recQf3zxkHFPeRABL"
+            ],
+            "Short ID": "LL",
+            "Course": [
+                "recUjPmBMgGVAwSA2",
+                "recIQcBMuETOKCo84",
+                "rechUOC9LP4RFzZL3",
+                "recANqTRKQLtriKsJ",
+                "recGu1k6cJ9d88gKE"
+            ],
+            "Publish": true,
+            "Average Level": 1.6666666666666667,
+            "Objectives Count": 31
+        },
+        "createdTime": "2019-09-05T17:49:21.000Z"
+    },
+    {
         "id": "recEpbffuddAjD376",
         "fields": {
             "Name": "Web Applications I",
@@ -208,8 +219,8 @@
             ],
             "Requires Auth": true,
             "Publish": true,
-            "Average Level": 2.0625,
-            "Objectives Count": 46
+            "Average Level": 2.125,
+            "Objectives Count": 45
         },
         "createdTime": "2019-07-05T21:58:01.000Z"
     },
@@ -278,25 +289,23 @@
         "createdTime": "2018-09-18T17:28:59.000Z"
     },
     {
-        "id": "recLuhRKolTUmT7KU",
+        "id": "recMO9lQ66fmLTNHS",
         "fields": {
-            "Name": "UX Web and Labs Prep Unit",
-            "Description": "Front-end Web Coding Fundamentals for UX",
+            "Name": "Ruby on Rails",
             "Sprints": [
-                "recSj7D1MnfSc54rM",
-                "recDFCRUNVxt4ZCq7",
-                "recXp8tCQi7tVzuJL",
-                "recGpyFrR6PPmHBY7",
-                "recTK97DRZq5kv1bZ"
+                "reckbmVy6CvtZ3onZ",
+                "recFOkp5KV9YeeFuo"
             ],
-            "Short ID": "UX-WEB",
+            "Short ID": "RUBY",
+            "Course": [
+                "recn4sOmdGXcS6Zh3"
+            ],
             "Requires Auth": true,
-            "Average Level": {
-                "specialValue": "NaN"
-            },
-            "Objectives Count": 9
+            "Publish": true,
+            "Average Level": 3.5,
+            "Objectives Count": 39
         },
-        "createdTime": "2019-01-02T18:54:13.000Z"
+        "createdTime": "2019-08-07T16:39:09.000Z"
     },
     {
         "id": "recPhHwk05xgnduyh",
@@ -476,7 +485,7 @@
             "Requires Auth": true,
             "Publish": true,
             "Average Level": 0.75,
-            "Objectives Count": 53
+            "Objectives Count": 54
         },
         "createdTime": "2019-07-05T22:08:24.000Z"
     },
@@ -653,20 +662,27 @@
             ],
             "Requires Auth": true,
             "Publish": true,
-            "Average Level": 1.2239583333333333,
-            "Objectives Count": 222
+            "Average Level": 1.21875,
+            "Objectives Count": 217
         },
         "createdTime": "2018-03-27T17:09:41.000Z"
     },
     {
         "id": "reclFPLU0Myh2528y",
         "fields": {
-            "Name": "iOS Supplemental Content",
+            "Name": "iOS Annex",
+            "Description": "This section contains supplementary content not included in the main iOS curriculum. Some of this is old content that we no longer teach, and is therefore not maintained, but is kept here for those interested in it.",
+            "Sprints": [
+                "rec7ulOdG4jFoYY2e"
+            ],
+            "Short ID": "iOSX",
+            "Course": [
+                "recIQcBMuETOKCo84"
+            ],
             "Requires Auth": true,
-            "Average Level": {
-                "specialValue": "NaN"
-            },
-            "Objectives Count": 0
+            "Publish": true,
+            "Average Level": 1,
+            "Objectives Count": 3
         },
         "createdTime": "2019-07-25T19:46:21.000Z"
     },
@@ -704,8 +720,8 @@
             ],
             "Requires Auth": true,
             "Publish": true,
-            "Average Level": 2.25,
-            "Objectives Count": 29
+            "Average Level": 2.9375,
+            "Objectives Count": 40
         },
         "createdTime": "2019-07-05T22:00:54.000Z"
     },
@@ -715,8 +731,6 @@
             "Name": "DS - Predictive Modeling",
             "Description": "Building predictive models.",
             "Sprints": [
-                "recJzWlJjoOf8QUIp",
-                "rec8nC7E8EAYFqaRG",
                 "reclu2nj43hQFPx2p",
                 "recgPpsKlD7tjQxoB",
                 "rece0tbcBVl01xfq6",
@@ -728,8 +742,8 @@
             ],
             "Requires Auth": true,
             "Publish": true,
-            "Average Level": 0.5,
-            "Objectives Count": 47
+            "Average Level": 0.625,
+            "Objectives Count": 42
         },
         "createdTime": "2018-09-24T17:46:08.000Z"
     },
@@ -789,8 +803,8 @@
                 "recZTB7U6BPT3nBbd",
                 "recUNVoIRSVWBa3Yv"
             ],
-            "Average Level": 2.5714285714285716,
-            "Objectives Count": 145
+            "Average Level": 2.607142857142857,
+            "Objectives Count": 144
         },
         "createdTime": "2017-11-14T16:57:55.000Z"
     },
@@ -853,10 +867,28 @@
                 "rec2scxQdYr28hhGy",
                 "recUNVoIRSVWBa3Yv"
             ],
-            "Average Level": 1.7916666666666667,
-            "Objectives Count": 37
+            "Average Level": 1.8333333333333333,
+            "Objectives Count": 35
         },
         "createdTime": "2017-11-14T16:57:55.000Z"
+    },
+    {
+        "id": "recyisqKotsJdZoDU",
+        "fields": {
+            "Name": "Product Cycles",
+            "Description": "Product engineering",
+            "Short ID": "LABS-2",
+            "Course": [
+                "rec68wUUoAfauQZyu"
+            ],
+            "Requires Auth": true,
+            "Publish": true,
+            "Average Level": {
+                "specialValue": "NaN"
+            },
+            "Objectives Count": 0
+        },
+        "createdTime": "2019-08-26T20:58:19.000Z"
     },
     {
         "id": "recz2FoQvo0QPb0AM",
