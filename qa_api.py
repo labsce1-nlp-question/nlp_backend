@@ -304,8 +304,8 @@ class QA:
         doc = [(w.text, w.pos_) for w in question]
 
         if DEBUG_MODE == "ON":
-            print("Question: "+question)
-            print("NLP Doc: "+doc)
+            print("Question: ", question)
+            print("NLP Doc: ", doc)
 
         # Resets question to be an array of keywords within original question:
         question = []
@@ -331,7 +331,7 @@ class QA:
                 question.append(w[0])
 
         if DEBUG_MODE == "ON":
-            print("Parsed Question: "+question)
+            print("Parsed Question: ", question)
 
         matches = []
         for module in modSearchData:
