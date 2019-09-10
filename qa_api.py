@@ -31,7 +31,8 @@ def getAirData():
 
     # Obtain all Modules:
     url = "https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Modules"
-    headers = {"Authorization": f"Bearer {AIRTABLE_KEY}"}  # noqa: E999
+    auth_value = 'Bearer '+AIRTABLE_KEY
+    headers = {"Authorization": auth_value}
     response = requests.get(url, headers=headers,)
 
     if response:
@@ -42,8 +43,9 @@ def getAirData():
             offset = m["offset"]
 
             url = "https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/"\
-                  f"Modules?offset={offset}"
-            headers = {"Authorization": f"Bearer {AIRTABLE_KEY}"}
+                  "Modules?offset="+offset  # noqa E999
+            auth_value = "Bearer "+AIRTABLE_KEY
+            headers = {"Authorization": auth_value}
             response = requests.get(url, headers=headers,)
 
             if response:
@@ -61,7 +63,8 @@ def getAirData():
 
     # Obtain all Objectives:
     url = "https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Objectives"
-    headers = {"Authorization": f"Bearer {AIRTABLE_KEY}"}
+    auth_value = "Bearer "+AIRTABLE_KEY
+    headers = {"Authorization": auth_value}
     response = requests.get(url, headers=headers,)
 
     if response:
@@ -72,8 +75,9 @@ def getAirData():
             offset = o["offset"]
 
             url = "https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/"\
-                  f"Objectives?offset={offset}"
-            headers = {"Authorization": f"Bearer {AIRTABLE_KEY}"}
+                  "Objectives?offset="+offset
+            auth_value = "Bearer "+AIRTABLE_KEY
+            headers = {"Authorization": auth_value}
             response = requests.get(url, headers=headers,)
 
             if response:
@@ -92,7 +96,8 @@ def getAirData():
 
     # Obtain all Currriculum Sets:
     url = "https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/Curriculum%20Sets"
-    headers = {"Authorization": f"Bearer {AIRTABLE_KEY}"}
+    auth_value = "Bearer "+AIRTABLE_KEY
+    headers = {"Authorization": auth_value}
     response = requests.get(url, headers=headers,)
 
     if response:
@@ -103,15 +108,16 @@ def getAirData():
             offset = c["offset"]
 
             url = "https://api.airtable.com/v0/app84GmnQ9SxIBjrJ/"\
-                  f"Curriculum%20Sets?offset={offset}"
-            headers = {"Authorization": f"Bearer {AIRTABLE_KEY}"}
+                "Curriculum%20Sets?offset="+offset
+            auth_value = "Bearer "+AIRTABLE_KEY
+            headers = {"Authorization": auth_value}
             response = requests.get(url, headers=headers,)
 
             if response:
                 c = response.json()
 
                 for curriculumSet in c["records"]:
-                    curriculumSets.append(curr)
+                    curriculumSets.append(curriculumSet)
             else:
                 print("Error getting offset", response.text)
     else:
@@ -136,7 +142,7 @@ def getAirData():
 
     if DEBUG_MODE == 'ON':
         speed = time.time() - t0
-        print(f"Speed: {speed}")
+        print("Speed: "+str(speed))
         print("\n<---End of getAirData")
 
 
@@ -197,7 +203,7 @@ def genModSearchData():
             for curriculumSet in newCurriculumSets:
                 if "Short ID" in curriculumSet["fields"]:
                     shortID = curriculumSet["fields"]["Short ID"].lower()
-                    newURL = f"https://learn.lambdaschool.com/{shortID}"
+                    newURL = "https://learn.lambdaschool.com/"+shortID
                     newURL += "/module/" + moduleFields["RecordID"]
                     response = requests.get(newURL)
 
@@ -221,7 +227,7 @@ def genModSearchData():
                     else:
                         counts[word.orth_] += 1
 
-            return counts
+                return counts
 
             # Gathers objectives linked to module:
             linkedObjectives = []
@@ -266,9 +272,9 @@ def genModSearchData():
 
     if DEBUG_MODE == 'ON':
         speed = time.time() - t0
-        print(f"modSearchData length: {len(modSearchData)}")
-        print(f"modSearchKeywords length: {len(modSearchKeywords)}")
-        print(f"Speed: {speed}")
+        print("modSearchData length: "+str(len(modSearchData)))
+        print("modSearchKeywords length: "+str(len(modSearchKeywords)))
+        print("Speed: "+str(speed))
         print("\n<---End of genModSearchData")
 
 
@@ -298,7 +304,8 @@ class QA:
         doc = [(w.text, w.pos_) for w in question]
 
         if DEBUG_MODE == "ON":
-            print(f"Question: {question}\nNLP Doc: {doc}")
+            print("Question: "+question)
+            print("NLP Doc: "+doc)
 
         # Resets question to be an array of keywords within original question:
         question = []
@@ -324,7 +331,7 @@ class QA:
                 question.append(w[0])
 
         if DEBUG_MODE == "ON":
-            print(f"Parsed Question: {question}")
+            print("Parsed Question: "+question)
 
         matches = []
         for module in modSearchData:
@@ -367,7 +374,7 @@ class UpdateQA:
         updates = req.media
 
         if DEBUG_MODE == "ON":
-            print(f"Updates : {updates}")
+            print("Updates : "+updates)
 
             # Example:
             # This updates object triggers the creation/update of modSearchData
@@ -392,4 +399,4 @@ api.add_route('/update', UpdateQA())
 
 if DEBUG_MODE == "ON":
     loadTime = time.time() - finalT0
-    print(f"<---QA Ready---> \nLoad Time: {loadTime}")
+    print("<---QA Ready---> \nLoad Time: "+str(loadTime))
