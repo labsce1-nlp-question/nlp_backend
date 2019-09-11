@@ -461,7 +461,7 @@ class QA:
 
         # Using choice to decide Jaccard or Cosine similarity metrics.
         # Based on choice we design of A/B testing.
-        choice = random.randint(0, 1)
+        choice = random.choice([0, 1, 1, 1])
 
         # Check if the category is available
         query_category = student_query.split(":")[0]
