@@ -12,6 +12,28 @@ import time
 from collections import Counter
 from dotenv import load_dotenv
 import os
+import pandas as pd
+import subprocess
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import string
+import random
+
+# NLTK related imports
+import nltk
+from nltk.tokenize import word_tokenize  # Word Tokenizer
+from nltk.corpus import stopwords
+from nltk.stem.wordnet import WordNetLemmatizer  # Word Lemmatizer
+
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+
+table = str.maketrans('', '', string.punctuation)
+stop_words = stopwords.words('english')
+stop_words = set(stop_words)
+
+lemmatizer = WordNetLemmatizer()
 
 load_dotenv()
 AIRTABLE_KEY = os.getenv('AIRTABLE_KEY')
@@ -21,6 +43,53 @@ if DEBUG_MODE == 'ON':
     finalT0 = time.time()
 
 nlp = spacy.load("en_core_web_sm")
+
+
+def get_jaccard_sim(str1, str2):
+    """
+    Jaccard similarity:
+    Also called intersection over union is defined as size of intersection
+    divided by size of union of two sets.
+    """
+    a = set(str1.split())
+    b = set(str2.split())
+    c = a.intersection(b)
+    return float(len(c)) / (len(a) + len(b) - len(c))
+
+
+def get_cosine_sim(*strs):
+    """
+    Cosine similarity:
+    Calculates similarity by measuring the cosine of angle between two vectors.
+    """
+    vectors = [t for t in get_vectors(*strs)]
+    return cosine_similarity(vectors)[0][1]
+
+
+def get_vectors(*strs):
+    text = [t for t in strs]
+    vectorizer = CountVectorizer(text)
+    vectorizer.fit(text)
+    return vectorizer.transform(text).toarray()
+
+
+def clean_text(text):
+    """
+    Cleaning the document before vectorization.
+    """
+    # Tokenize by word
+    tokens = word_tokenize(text)
+    # Make all words lowercase
+    lowercase_tokens = [w.lower() for w in tokens]
+    # Strip punctuation from within words
+    no_punctuation = [x.translate(table) for x in lowercase_tokens]
+    # Remove words that aren't alphabetic
+    alphabetic = [word for word in no_punctuation if word.isalpha()]
+    # Remove stopwords
+    no_stop_words = [w for w in alphabetic if not w in stop_words]  # noqa E713
+    # Lemmatize words
+    lemmas = [lemmatizer.lemmatize(word) for word in no_stop_words]
+    return ' '.join(lemmas)
 
 
 def getAirData():
@@ -148,12 +217,12 @@ def getAirData():
 
 def genModSearchData():
     """Generates modSearchData.json"""
+
     if DEBUG_MODE == 'ON':
         print("Start of genModSearchData--->\n")
         t0 = time.time()
 
     modSearchData = []
-    modSearchKeywords = {}
 
     # Loads jsons from ./tables
     with open('./tables/modules.json', 'r') as modules:
@@ -259,23 +328,115 @@ def genModSearchData():
             modSearchProfile["text"] = text
             modSearchProfile["textFreq"] = getFreq(text)
             newEntry["modSearchProfile"] = modSearchProfile
-            for word in moduleFields["Name"].lower().split():
-                if word not in modSearchKeywords:
-                    modSearchKeywords[word] = True
-
             modSearchData.append(newEntry)
 
     with open("./modSearchData.json", "w") as f:
         json.dump(modSearchData, f, indent=4)
-    with open("./modSearchKeywords.json", "w") as f:
-        json.dump(modSearchKeywords, f, indent=4)
 
     if DEBUG_MODE == 'ON':
         speed = time.time() - t0
         print("modSearchData length: "+str(len(modSearchData)))
-        print("modSearchKeywords length: "+str(len(modSearchKeywords)))
         print("Speed: "+str(speed))
         print("\n<---End of genModSearchData")
+
+    # Reload data after updating modSearchData.json file
+    load_data()
+
+
+def load_data():
+    """Loading function before 1st query"""
+    print("Data loading started..............................................")
+    global available_category
+    global df
+
+    # Loading data onto dataframe
+    df = pd.read_json('modSearchData.json')
+
+    # Dropping NaN values
+    if df.isnull().sum().sum():
+        df.dropna(inplace=True)
+
+    # Categorizing the training kit information
+    category = []
+
+    cmd = """cat "modSearchData.json" | grep '"URL"' | cut -d/ -f4"""
+    section_names = subprocess.check_output(cmd, shell=True)\
+        .decode("utf-8").split()
+
+    for section in section_names:
+        if section in ['and-pre', 'android']:
+            category.append('android')
+        elif section in ['cd', 'cr', 'ls-edu', 'nxt', 'p4s']:
+            category.append('career')
+        elif section in ['cs']:
+            category.append('cs')
+        elif section in ['ds', 'ds-pre']:
+            category.append('ds')
+        elif section in ['fsw', 'fsw-pre', 'web1', 'web2',
+                         'web3', 'web4java', 'web4node']:
+            category.append('web')
+        elif section in ['ios', 'ios-pre']:
+            category.append('ios')
+        elif section in ['ux', 'ux-pre']:
+            category.append('ux')
+        else:
+            category.append('other')
+
+    df['category'] = category
+
+    # Extract text information from modSearchProfile
+    def extract_text(row):
+        return dict(row)['text']
+
+    df['modSearchText'] = df['modSearchProfile'].apply(extract_text)
+
+    # Combining text based information
+    df['text'] = df.apply(lambda row: row['name'] + " " + row['description']
+                          + " " + row['modSearchText'], axis=1)
+
+    # Dropping detailed text information.
+    # This can be used later if needed.
+    df.drop(columns=['modSearchProfile'], inplace=True)
+
+    # Clean up the text
+    df['cleaned_text'] = df.text.apply(clean_text)
+
+    # Used for category based search
+    available_category = df.category.unique()
+    print("Data loading complete.............................................")
+
+
+def build_response(df, match_type, similarity_metrics, match_count=3):
+    """Populates the records to be returned in response."""
+    # Dictionary to build response packet
+    resp_dict = {}
+
+    # Building the response
+    resp_dict['match_type'] = match_type
+    resp_dict['similarity_metrics'] = similarity_metrics
+
+    match = []
+    for i in range(min(df.shape[0], match_count)):
+        row = df.iloc[i, :]
+
+        record = {}
+        record['id'] = row['id']
+        record['name'] = row['name']
+        record['description'] = row['description']
+        record['URL'] = row['URL']
+        match.append(record)
+
+    resp_dict['match'] = match
+    # return json.dumps(resp_dict)
+    return resp_dict
+
+
+# Initializing empty globals
+df = pd.DataFrame()
+available_category = []
+
+# Need to ensure data is loaded at init for content based search
+load_data()
 
 
 class QA:
@@ -292,80 +453,89 @@ class QA:
 
     def on_post(self, req, resp):
         """Handles POST requests"""
-        if DEBUG_MODE == 'ON':
-            print("Start of QA POST--->")
+        global available_category
+        global df
 
-        with open("./modSearchData.json", "r") as modSearchData:
-            modSearchData = json.load(modSearchData)
-        with open("./modSearchKeywords.json", "r") as modSearchKeywords:
-            modSearchKeywords = json.load(modSearchKeywords)
+        # User Input
+        student_query = req.media["question"]
 
-        question = nlp(req.media["question"].lower())
-        doc = [(w.text, w.pos_) for w in question]
+        # Using choice to decide Jaccard or Cosine similarity metrics.
+        # Based on choice we design of A/B testing.
+        choice = random.randint(0, 1)
 
-        if DEBUG_MODE == "ON":
-            print("Question: ", question)
-            print("NLP Doc: ", doc)
+        # Check if the category is available
+        query_category = student_query.split(":")[0]
 
-        # Resets question to be an array of keywords within original question:
-        question = []
-        for w in doc:
-            if (w[1] != 'DET'
-                    and w[1]
-                    and w[1] != 'CCONJ'
-                    and w[1] != 'VERB'
-                    and w[1] != 'PRON'
-                    and w[1] != 'PART'
-                    and w[1] != 'ADV'
-                    and w[1] != 'ADP'
-                    and w[1] != 'PUNCT'):
-                question.append(w[0])
-            elif w[1] == 'PUNCT' and len(w[0]) != 1:
-                question.append(w[0])
-            elif (w[0] in modSearchKeywords
-                    and w[1] != 'CCONJ'
-                    and w[1] != 'PART'
-                    and w[1] != 'ADP'
-                    and w[1] != 'ADV'
-                    and w[1] != 'DET'):
-                question.append(w[0])
+        if query_category in available_category:
+            df_match_by_category = df[df['category'] == query_category].copy()
 
-        if DEBUG_MODE == "ON":
-            print("Parsed Question: ", question)
+            query_without_category = \
+                clean_text(student_query.replace(query_category+":", ""))
 
-        matches = []
-        for module in modSearchData:
-            newMatch = {
-                "id": module["id"],
-                "name": module["name"],
-                "description": module["description"],
-                "URL": module["URL"],
-                "nameMatch": [],
-                "textMatch": [],
-                "score": 0}
-            modSearchProfile = module["modSearchProfile"]
+            df_match_by_category['jaccard_sim_value'] = \
+                df_match_by_category.cleaned_text.\
+                apply(get_jaccard_sim, args=(query_without_category,))
+            sort_by_jaccard_sim = \
+                df_match_by_category.sort_values('jaccard_sim_value',
+                                                 ascending=False).head(10)
+            jaccard_match = sort_by_jaccard_sim[
+                                sort_by_jaccard_sim['jaccard_sim_value'] > 0]
 
-            for w in question:
-                if w in newMatch["name"].lower():
-                    newMatch["nameMatch"].append((w, 2))
-                if w in modSearchProfile["textFreq"]:
-                    newMatch["textMatch"].\
-                        append((w, modSearchProfile["textFreq"][w]))
+            df_match_by_category['cosine_sim_value'] = \
+                df_match_by_category.cleaned_text.\
+                apply(get_cosine_sim, args=(query_without_category,))
+            sort_by_cosine_sim = \
+                df_match_by_category.sort_values('cosine_sim_value',
+                                                 ascending=False).head(10)
 
-            if (newMatch["score"] == 0
-                    and (newMatch["nameMatch"] != []
-                         or newMatch["textMatch"] != [])):
+            cosine_match = sort_by_cosine_sim[
+                               sort_by_cosine_sim['cosine_sim_value'] > 0]
 
-                for nScore in newMatch["nameMatch"]:
-                    newMatch["score"] += nScore[1]
+            # Building the response
+            if choice == 0:
+                # Using Jaccard similarity metrics
+                resp.media = build_response(jaccard_match,
+                                            'category search', 'jaccard')
+                return
+            else:
+                # Using Cosine similarity metrics
+                resp.media = build_response(cosine_match,
+                                            'category search', 'cosine')
+                return
 
-                for tScore in newMatch["textMatch"]:
-                    newMatch["score"] += tScore[1]
+        else:
+            df_full_match = df.copy()
 
-                matches.append(newMatch)
+            df_full_match['jaccard_sim_value'] = \
+                df_full_match.cleaned_text.\
+                apply(get_jaccard_sim, args=(clean_text(student_query),))
+            sort_by_jaccard_sim = \
+                df_full_match.sort_values('jaccard_sim_value',
+                                          ascending=False).head(10)
+            jaccard_match = sort_by_jaccard_sim[
+                                sort_by_jaccard_sim['jaccard_sim_value'] > 0]
 
-                matches.sort(key=lambda x: x["score"], reverse=True)
-                resp.media = matches
+            df_full_match['cosine_sim_value'] = \
+                df_full_match.cleaned_text.\
+                apply(get_cosine_sim, args=(clean_text(student_query),))
+
+            sort_by_cosine_sim = \
+                df_full_match.sort_values('cosine_sim_value',
+                                          ascending=False).head(10)
+            cosine_match = sort_by_cosine_sim[
+                               sort_by_cosine_sim['cosine_sim_value'] > 0]
+
+            # Building the response
+            if choice == 0:
+                # Using Jaccard similarity metrics
+                resp.media = build_response(jaccard_match,
+                                            'full search', 'jaccard')
+                return
+            else:
+                # Using Cosine similarity metrics
+                resp.media = build_response(cosine_match,
+                                            'full search', 'cosine')
+                return
 
 
 class UpdateQA:
